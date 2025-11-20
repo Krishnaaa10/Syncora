@@ -1,0 +1,80 @@
+{
+  "stores": [
+    {
+      "Store_ID": "MNR01",
+      "Name": "Manohar - Main Outlet",
+      "Brand": "Manohar",
+      "address": "Sample Address, Mumbai",
+      "location": { "lat": 19.0760, "lng": 72.8777 }
+    }
+  ],
+  "products": [
+    {
+      "Item_ID": "ITM001",
+      "Item_Name": "Akhrot Bites",
+      "Category": "Mithai",
+      "Sub_Category": "Premium Sweets",
+      "Price": 435,
+      "Unit_Size": "500g Box",
+      "Stock_Available": 42,
+      "Last_Updated": "2025-11-19",
+      "Store_ID": "MNR01"
+    },
+    {
+      "Item_ID": "ITM002",
+      "Item_Name": "Badam Burfi",
+      "Category": "Mithai",
+      "Sub_Category": "Classic Sweets",
+      "Price": 220,
+      "Unit_Size": "250g Box",
+      "Stock_Available": 60,
+      "Last_Updated": "2025-11-19",
+      "Store_ID": "MNR01"
+    },
+    {
+      "Item_ID": "ITM003",
+      "Item_Name": "Besan Laddu",
+      "Category": "Mithai",
+      "Sub_Category": "Laddus",
+      "Price": 214,
+      "Unit_Size": "500g Box",
+      "Stock_Available": 35,
+      "Last_Updated": "2025-11-19",
+      "Store_ID": "MNR01"
+    },
+    {
+      "Item_ID": "ITM004",
+      "Item_Name": "Kachori",
+      "Category": "Snacks",
+      "Sub_Category": "Fresh Snacks",
+      "Price": 25,
+      "Unit_Size": "Per Piece",
+      "Stock_Available": 120,
+      "Last_Updated": "2025-11-19",
+      "Store_ID": "MNR01"
+    },
+    {
+      "Item_ID": "ITM005",
+      "Item_Name": "Samosa",
+      "Category": "Snacks",
+      "Sub_Category": "Fresh Snacks",
+      "Price": 20,
+      "Unit_Size": "Per Piece",
+      "Stock_Available": 200,
+      "Last_Updated": "2025-11-19",
+      "Store_ID": "MNR01"
+    },
+    {
+      "Item_ID": "ITM006",
+      "Item_Name": "Namkeen Mix",
+      "Category": "Namkeen",
+      "Sub_Category": "Mixtures",
+      "Price": 160,
+      "Unit_Size": "1kg Packet",
+      "Stock_Available": 80,
+      "Last_Updated": "2025-11-19",
+      "Store_ID": "MNR01"
+    }
+  ]
+}
+
