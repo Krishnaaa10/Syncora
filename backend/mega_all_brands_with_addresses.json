@@ -1,0 +1,1596 @@
+{
+  "manohar_dairy": [
+    {
+      "Store_ID": "MNR01",
+      "Address": "Plot 132, Zone 1, MP Nagar, Bhopal – 462011",
+      "Items": [
+        {
+          "Item_ID": "MNR01_ITM001",
+          "Item_Name": "Akhrot Bites",
+          "Category": "Mithai",
+          "Sub_Category": "Premium Sweets",
+          "Price": 435,
+          "Unit_Size": "500g Box",
+          "Stock_Available": 42,
+          "Last_Updated": "2025-11-19",
+          "Store_ID": "MNR01"
+        },
+        {
+          "Item_ID": "MNR01_ITM002",
+          "Item_Name": "Badam Burfi",
+          "Category": "Mithai",
+          "Sub_Category": "Classic Sweets",
+          "Price": 220,
+          "Unit_Size": "250g Box",
+          "Stock_Available": 60,
+          "Last_Updated": "2025-11-19",
+          "Store_ID": "MNR01"
+        },
+        {
+          "Item_ID": "MNR01_ITM003",
+          "Item_Name": "Besan Laddu",
+          "Category": "Mithai",
+          "Sub_Category": "Laddus",
+          "Price": 214,
+          "Unit_Size": "500g Box",
+          "Stock_Available": 35,
+          "Last_Updated": "2025-11-19",
+          "Store_ID": "MNR01"
+        },
+        {
+          "Item_ID": "MNR01_ITM004",
+          "Item_Name": "Kachori",
+          "Category": "Snacks",
+          "Sub_Category": "Fresh Snacks",
+          "Price": 25,
+          "Unit_Size": "Per Piece",
+          "Stock_Available": 120,
+          "Last_Updated": "2025-11-19",
+          "Store_ID": "MNR01"
+        },
+        {
+          "Item_ID": "MNR01_ITM005",
+          "Item_Name": "Samosa",
+          "Category": "Snacks",
+          "Sub_Category": "Fresh Snacks",
+          "Price": 20,
+          "Unit_Size": "Per Piece",
+          "Stock_Available": 200,
+          "Last_Updated": "2025-11-19",
+          "Store_ID": "MNR01"
+        },
+        {
+          "Item_ID": "MNR01_ITM006",
+          "Item_Name": "Namkeen Mix",
+          "Category": "Namkeen",
+          "Sub_Category": "Mixtures",
+          "Price": 160,
+          "Unit_Size": "1kg Packet",
+          "Stock_Available": 80,
+          "Last_Updated": "2025-11-19",
+          "Store_ID": "MNR01"
+        }
+      ]
+    },
+    {
+      "Store_ID": "MNR02",
+      "Address": "6, Hamidia Road, Opp Alpana Cineplex, Peer Gate Area, Bhopal – 462001",
+      "Items": [
+        {
+          "Item_ID": "MNR02_ITM001",
+          "Item_Name": "Kaju Katli",
+          "Category": "Mithai",
+          "Sub_Category": "Premium Sweets",
+          "Price": 780,
+          "Unit_Size": "500g Box",
+          "Stock_Available": 40,
+          "Last_Updated": "2025-11-19",
+          "Store_ID": "MNR02"
+        },
+        {
+          "Item_ID": "MNR02_ITM002",
+          "Item_Name": "Mawa Bati",
+          "Category": "Mithai",
+          "Sub_Category": "Traditional",
+          "Price": 320,
+          "Unit_Size": "500g Box",
+          "Stock_Available": 38,
+          "Last_Updated": "2025-11-19",
+          "Store_ID": "MNR02"
+        },
+        {
+          "Item_ID": "MNR02_ITM003",
+          "Item_Name": "Poha Sev",
+          "Category": "Namkeen",
+          "Sub_Category": "Mixtures",
+          "Price": 120,
+          "Unit_Size": "1kg Packet",
+          "Stock_Available": 95,
+          "Last_Updated": "2025-11-19",
+          "Store_ID": "MNR02"
+        },
+        {
+          "Item_ID": "MNR02_ITM004",
+          "Item_Name": "Dhokla",
+          "Category": "Snacks",
+          "Sub_Category": "Fresh Snacks",
+          "Price": 35,
+          "Unit_Size": "Per Piece",
+          "Stock_Available": 130,
+          "Last_Updated": "2025-11-19",
+          "Store_ID": "MNR02"
+        },
+        {
+          "Item_ID": "MNR02_ITM005",
+          "Item_Name": "Rabdi",
+          "Category": "Desserts",
+          "Sub_Category": "Milk Based",
+          "Price": 65,
+          "Unit_Size": "Cup",
+          "Stock_Available": 55,
+          "Last_Updated": "2025-11-19",
+          "Store_ID": "MNR02"
+        },
+        {
+          "Item_ID": "MNR02_ITM006",
+          "Item_Name": "Kesar Peda",
+          "Category": "Mithai",
+          "Sub_Category": "Premium Sweets",
+          "Price": 450,
+          "Unit_Size": "500g Box",
+          "Stock_Available": 28,
+          "Last_Updated": "2025-11-19",
+          "Store_ID": "MNR02"
+        }
+      ]
+    },
+    {
+      "Store_ID": "MNR03",
+      "Address": "6, Hamidia Road, Dangi Colony, Ghora Nakkas, Peer Gate, Bhopal – 462001",
+      "Items": [
+        {
+          "Item_ID": "MNR03_ITM001",
+          "Item_Name": "Ghewar (500g)",
+          "Category": "Mithai",
+          "Sub_Category": "Rajasthani Special",
+          "Price": 340,
+          "Unit_Size": "500g Box",
+          "Stock_Available": 32,
+          "Last_Updated": "2025-11-19",
+          "Store_ID": "MNR03"
+        },
+        {
+          "Item_ID": "MNR03_ITM002",
+          "Item_Name": "Malai Sandwich",
+          "Category": "Mithai",
+          "Sub_Category": "Bengali Sweet",
+          "Price": 280,
+          "Unit_Size": "500g Box",
+          "Stock_Available": 27,
+          "Last_Updated": "2025-11-19",
+          "Store_ID": "MNR03"
+        },
+        {
+          "Item_ID": "MNR03_ITM003",
+          "Item_Name": "Khandvi",
+          "Category": "Snacks",
+          "Sub_Category": "Fresh Snacks",
+          "Price": 30,
+          "Unit_Size": "Per Piece",
+          "Stock_Available": 110,
+          "Last_Updated": "2025-11-19",
+          "Store_ID": "MNR03"
+        },
+        {
+          "Item_ID": "MNR03_ITM004",
+          "Item_Name": "Jalebi (1kg)",
+          "Category": "Desserts",
+          "Sub_Category": "Indian Hot Sweet",
+          "Price": 220,
+          "Unit_Size": "1kg",
+          "Stock_Available": 48,
+          "Last_Updated": "2025-11-19",
+          "Store_ID": "MNR03"
+        },
+        {
+          "Item_ID": "MNR03_ITM005",
+          "Item_Name": "Poha with Jalebi",
+          "Category": "Snacks",
+          "Sub_Category": "Breakfast",
+          "Price": 45,
+          "Unit_Size": "Plate",
+          "Stock_Available": 85,
+          "Last_Updated": "2025-11-19",
+          "Store_ID": "MNR03"
+        },
+        {
+          "Item_ID": "MNR03_ITM006",
+          "Item_Name": "Chole Bhature",
+          "Category": "Meals",
+          "Sub_Category": "North Indian",
+          "Price": 95,
+          "Unit_Size": "Plate",
+          "Stock_Available": 39,
+          "Last_Updated": "2025-11-19",
+          "Store_ID": "MNR03"
+        }
+      ]
+    },
+    {
+      "Store_ID": "MNR04",
+      "Address": "New Market, Near Roshanpura Square, Bhopal – 462003",
+      "Items": [
+        {
+          "Item_ID": "MNR04_ITM001",
+          "Item_Name": "Moong Dal Halwa",
+          "Category": "Desserts",
+          "Sub_Category": "Hot Sweets",
+          "Price": 380,
+          "Unit_Size": "500g",
+          "Stock_Available": 22,
+          "Last_Updated": "2025-11-19",
+          "Store_ID": "MNR04"
+        },
+        {
+          "Item_ID": "MNR04_ITM002",
+          "Item_Name": "Chhena Rasgulla",
+          "Category": "Mithai",
+          "Sub_Category": "Bengali",
+          "Price": 180,
+          "Unit_Size": "10 pcs Box",
+          "Stock_Available": 45,
+          "Last_Updated": "2025-11-19",
+          "Store_ID": "MNR04"
+        },
+        {
+          "Item_ID": "MNR04_ITM003",
+          "Item_Name": "Pav Bhaji",
+          "Category": "Snacks",
+          "Sub_Category": "Fast Food",
+          "Price": 90,
+          "Unit_Size": "Plate",
+          "Stock_Available": 70,
+          "Last_Updated": "2025-11-19",
+          "Store_ID": "MNR04"
+        },
+        {
+          "Item_ID": "MNR04_ITM004",
+          "Item_Name": "Masala Dosa",
+          "Category": "Meals",
+          "Sub_Category": "South Indian",
+          "Price": 110,
+          "Unit_Size": "Plate",
+          "Stock_Available": 55,
+          "Last_Updated": "2025-11-19",
+          "Store_ID": "MNR04"
+        },
+        {
+          "Item_ID": "MNR04_ITM005",
+          "Item_Name": "Kashmiri Mix Namkeen",
+          "Category": "Namkeen",
+          "Sub_Category": "Mixture",
+          "Price": 160,
+          "Unit_Size": "1kg Packet",
+          "Stock_Available": 60,
+          "Last_Updated": "2025-11-19",
+          "Store_ID": "MNR04"
+        },
+        {
+          "Item_ID": "MNR04_ITM006",
+          "Item_Name": "Malpua with Rabdi",
+          "Category": "Desserts",
+          "Sub_Category": "Seasonal Special",
+          "Price": 95,
+          "Unit_Size": "Plate",
+          "Stock_Available": 28,
+          "Last_Updated": "2025-11-19",
+          "Store_ID": "MNR04"
+        }
+      ]
+    },
+    {
+      "Store_ID": "MNR05",
+      "Address": "Kohefiza Main Road, Near VIP Road, Bhopal – 462001",
+      "Items": [
+        {
+          "Item_ID": "MNR05_ITM001",
+          "Item_Name": "Rabri Jalebi",
+          "Category": "Desserts",
+          "Sub_Category": "Indian Sweet",
+          "Price": 150,
+          "Unit_Size": "Plate",
+          "Stock_Available": 40,
+          "Last_Updated": "2025-11-19",
+          "Store_ID": "MNR05"
+        },
+        {
+          "Item_ID": "MNR05_ITM002",
+          "Item_Name": "Dry Fruit Laddu",
+          "Category": "Mithai",
+          "Sub_Category": "Premium",
+          "Price": 480,
+          "Unit_Size": "500g Box",
+          "Stock_Available": 25,
+          "Last_Updated": "2025-11-19",
+          "Store_ID": "MNR05"
+        },
+        {
+          "Item_ID": "MNR05_ITM003",
+          "Item_Name": "Special Poha",
+          "Category": "Snacks",
+          "Sub_Category": "Breakfast",
+          "Price": 35,
+          "Unit_Size": "Plate",
+          "Stock_Available": 95,
+          "Last_Updated": "2025-11-19",
+          "Store_ID": "MNR05"
+        },
+        {
+          "Item_ID": "MNR05_ITM004",
+          "Item_Name": "Paneer Pakoda",
+          "Category": "Snacks",
+          "Sub_Category": "Fried",
+          "Price": 110,
+          "Unit_Size": "Plate",
+          "Stock_Available": 60,
+          "Last_Updated": "2025-11-19",
+          "Store_ID": "MNR05"
+        },
+        {
+          "Item_ID": "MNR05_ITM005",
+          "Item_Name": "Chole Chawal",
+          "Category": "Meals",
+          "Sub_Category": "North Indian",
+          "Price": 80,
+          "Unit_Size": "Plate",
+          "Stock_Available": 50,
+          "Last_Updated": "2025-11-19",
+          "Store_ID": "MNR05"
+        },
+        {
+          "Item_ID": "MNR05_ITM006",
+          "Item_Name": "Khasta Kachori",
+          "Category": "Snacks",
+          "Sub_Category": "Special Snacks",
+          "Price": 30,
+          "Unit_Size": "1 pc",
+          "Stock_Available": 140,
+          "Last_Updated": "2025-11-19",
+          "Store_ID": "MNR05"
+        }
+      ]
+    }
+  ],
+  "bake_n_shake": [
+    {
+      "Store_ID": "BNS01",
+      "Address": "B-1 & 2, GM Tower, 10 No. Market, Arera Colony, Bhopal – 462016",
+      "Items": [
+        {
+          "Item_ID": "BNS01_ITM001",
+          "Item_Name": "Korean Cream Cheese Bun",
+          "Category": "Buns & Bakery",
+          "Sub_Category": "Buns",
+          "Price": 180,
+          "Unit_Size": "1 pc",
+          "Stock_Available": 65,
+          "Last_Updated": "2025-11-19",
+          "Store_ID": "BNS01"
+        },
+        {
+          "Item_ID": "BNS01_ITM002",
+          "Item_Name": "Dark Chocolate Cake (1kg)",
+          "Category": "Cakes",
+          "Sub_Category": "Chocolate",
+          "Price": 1320,
+          "Unit_Size": "1 kg",
+          "Stock_Available": 12,
+          "Last_Updated": "2025-11-19",
+          "Store_ID": "BNS01"
+        },
+        {
+          "Item_ID": "BNS01_ITM003",
+          "Item_Name": "Red Velvet Mousse Cake (1kg)",
+          "Category": "Cakes",
+          "Sub_Category": "Premium Cakes",
+          "Price": 1540,
+          "Unit_Size": "1 kg",
+          "Stock_Available": 9,
+          "Last_Updated": "2025-11-19",
+          "Store_ID": "BNS01"
+        },
+        {
+          "Item_ID": "BNS01_ITM004",
+          "Item_Name": "Vanilla Milk Shake",
+          "Category": "Shakes",
+          "Sub_Category": "Milk Shakes",
+          "Price": 180,
+          "Unit_Size": "Regular",
+          "Stock_Available": 78,
+          "Last_Updated": "2025-11-19",
+          "Store_ID": "BNS01"
+        },
+        {
+          "Item_ID": "BNS01_ITM005",
+          "Item_Name": "Mango Milk Shake",
+          "Category": "Shakes",
+          "Sub_Category": "Fruit Shakes",
+          "Price": 230,
+          "Unit_Size": "Regular",
+          "Stock_Available": 50,
+          "Last_Updated": "2025-11-19",
+          "Store_ID": "BNS01"
+        },
+        {
+          "Item_ID": "BNS01_ITM006",
+          "Item_Name": "Mushroom Pizza (10\")",
+          "Category": "Pizza",
+          "Sub_Category": "Vegetarian",
+          "Price": 585,
+          "Unit_Size": "10 inch",
+          "Stock_Available": 24,
+          "Last_Updated": "2025-11-19",
+          "Store_ID": "BNS01"
+        }
+      ]
+    },
+    {
+      "Store_ID": "BNS02",
+      "Address": "Zone-1, Near Jyoti Cineplex, MP Nagar, Bhopal – 462023",
+      "Items": [
+        {
+          "Item_ID": "BNS02_ITM001",
+          "Item_Name": "Cheese Pizza (Regular)",
+          "Category": "Pizza",
+          "Sub_Category": "Veg Pizza",
+          "Price": 350,
+          "Unit_Size": "Regular",
+          "Stock_Available": 45,
+          "Last_Updated": "2025-11-19",
+          "Store_ID": "BNS02"
+        },
+        {
+          "Item_ID": "BNS02_ITM002",
+          "Item_Name": "Farmhouse Pizza (Regular)",
+          "Category": "Pizza",
+          "Sub_Category": "Veg Pizza",
+          "Price": 450,
+          "Unit_Size": "Regular",
+          "Stock_Available": 22,
+          "Last_Updated": "2025-11-19",
+          "Store_ID": "BNS02"
+        },
+        {
+          "Item_ID": "BNS02_ITM003",
+          "Item_Name": "Pasta Alfredo",
+          "Category": "Pasta",
+          "Sub_Category": "White Sauce",
+          "Price": 260,
+          "Unit_Size": "Plate",
+          "Stock_Available": 34,
+          "Last_Updated": "2025-11-19",
+          "Store_ID": "BNS02"
+        },
+        {
+          "Item_ID": "BNS02_ITM004",
+          "Item_Name": "Pasta Arrabbiata",
+          "Category": "Pasta",
+          "Sub_Category": "Red Sauce",
+          "Price": 250,
+          "Unit_Size": "Plate",
+          "Stock_Available": 28,
+          "Last_Updated": "2025-11-19",
+          "Store_ID": "BNS02"
+        },
+        {
+          "Item_ID": "BNS02_ITM005",
+          "Item_Name": "Blueberry Muffin",
+          "Category": "Bakery",
+          "Sub_Category": "Muffins",
+          "Price": 95,
+          "Unit_Size": "1 pc",
+          "Stock_Available": 88,
+          "Last_Updated": "2025-11-19",
+          "Store_ID": "BNS02"
+        },
+        {
+          "Item_ID": "BNS02_ITM006",
+          "Item_Name": "Iced Coffee",
+          "Category": "Beverages",
+          "Sub_Category": "Cold Coffee",
+          "Price": 140,
+          "Unit_Size": "Regular",
+          "Stock_Available": 60,
+          "Last_Updated": "2025-11-19",
+          "Store_ID": "BNS02"
+        }
+      ]
+    },
+    {
+      "Store_ID": "BNS03",
+      "Address": "Shop No. 14, Sagar Gaire lane, Near Bus Stand, New Market, Bhopal – 462003",
+      "Items": [
+        {
+          "Item_ID": "BNS03_ITM001",
+          "Item_Name": "Veg Cheese Sandwich",
+          "Category": "Sandwiches",
+          "Sub_Category": "Grilled",
+          "Price": 165,
+          "Unit_Size": "1 pc",
+          "Stock_Available": 70,
+          "Last_Updated": "2025-11-19",
+          "Store_ID": "BNS03"
+        },
+        {
+          "Item_ID": "BNS03_ITM002",
+          "Item_Name": "Chicken Grill Sandwich",
+          "Category": "Sandwiches",
+          "Sub_Category": "Grilled",
+          "Price": 210,
+          "Unit_Size": "1 pc",
+          "Stock_Available": 40,
+          "Last_Updated": "2025-11-19",
+          "Store_ID": "BNS03"
+        },
+        {
+          "Item_ID": "BNS03_ITM003",
+          "Item_Name": "Oreo Shake",
+          "Category": "Shakes",
+          "Sub_Category": "Special Shakes",
+          "Price": 325,
+          "Unit_Size": "Regular",
+          "Stock_Available": 50,
+          "Last_Updated": "2025-11-19",
+          "Store_ID": "BNS03"
+        },
+        {
+          "Item_ID": "BNS03_ITM004",
+          "Item_Name": "Chocolate Fudge Cake (500g)",
+          "Category": "Cakes",
+          "Sub_Category": "Chocolate",
+          "Price": 720,
+          "Unit_Size": "500g",
+          "Stock_Available": 15,
+          "Last_Updated": "2025-11-19",
+          "Store_ID": "BNS03"
+        },
+        {
+          "Item_ID": "BNS03_ITM005",
+          "Item_Name": "Classic Veg Burger",
+          "Category": "Burgers",
+          "Sub_Category": "Veg",
+          "Price": 120,
+          "Unit_Size": "1 pc",
+          "Stock_Available": 85,
+          "Last_Updated": "2025-11-19",
+          "Store_ID": "BNS03"
+        },
+        {
+          "Item_ID": "BNS03_ITM006",
+          "Item_Name": "Choco Lava Cake",
+          "Category": "Desserts",
+          "Sub_Category": "Hot Cakes",
+          "Price": 160,
+          "Unit_Size": "1 pc",
+          "Stock_Available": 48,
+          "Last_Updated": "2025-11-19",
+          "Store_ID": "BNS03"
+        }
+      ]
+    },
+    {
+      "Store_ID": "BNS04",
+      "Address": "Shop No. 5, Alark Square, Airport Road, Lalghati, Bhopal – 462030",
+      "Items": [
+        {
+          "Item_ID": "BNS04_ITM001",
+          "Item_Name": "Paneer Tikka Pizza (10 inch)",
+          "Category": "Pizza",
+          "Sub_Category": "Veg Pizza",
+          "Price": 645,
+          "Unit_Size": "10 inch",
+          "Stock_Available": 18,
+          "Last_Updated": "2025-11-19",
+          "Store_ID": "BNS04"
+        },
+        {
+          "Item_ID": "BNS04_ITM002",
+          "Item_Name": "Tandoori Paneer Sandwich",
+          "Category": "Sandwiches",
+          "Sub_Category": "Grilled",
+          "Price": 195,
+          "Unit_Size": "1 pc",
+          "Stock_Available": 52,
+          "Last_Updated": "2025-11-19",
+          "Store_ID": "BNS04"
+        },
+        {
+          "Item_ID": "BNS04_ITM003",
+          "Item_Name": "Mango Mousse Cake (500g)",
+          "Category": "Cakes",
+          "Sub_Category": "Fruit Cakes",
+          "Price": 820,
+          "Unit_Size": "500g",
+          "Stock_Available": 14,
+          "Last_Updated": "2025-11-19",
+          "Store_ID": "BNS04"
+        },
+        {
+          "Item_ID": "BNS04_ITM004",
+          "Item_Name": "Garlic Bread",
+          "Category": "Sides",
+          "Sub_Category": "Bread",
+          "Price": 110,
+          "Unit_Size": "Plate",
+          "Stock_Available": 65,
+          "Last_Updated": "2025-11-19",
+          "Store_ID": "BNS04"
+        },
+        {
+          "Item_ID": "BNS04_ITM005",
+          "Item_Name": "Classic French Fries",
+          "Category": "Sides",
+          "Sub_Category": "Fries",
+          "Price": 120,
+          "Unit_Size": "Plate",
+          "Stock_Available": 90,
+          "Last_Updated": "2025-11-19",
+          "Store_ID": "BNS04"
+        },
+        {
+          "Item_ID": "BNS04_ITM006",
+          "Item_Name": "Tiramisu Cup",
+          "Category": "Desserts",
+          "Sub_Category": "Italian Desserts",
+          "Price": 180,
+          "Unit_Size": "1 cup",
+          "Stock_Available": 32,
+          "Last_Updated": "2025-11-19",
+          "Store_ID": "BNS04"
+        }
+      ]
+    },
+    {
+      "Store_ID": "BNS05",
+      "Address": "Shop No. 27, Kohefiza Main Road, Near Halal Market, Bhopal – 462001",
+      "Items": [
+        {
+          "Item_ID": "BNS05_ITM001",
+          "Item_Name": "Mushroom Roll",
+          "Category": "Bakery",
+          "Sub_Category": "Rolls",
+          "Price": 110,
+          "Unit_Size": "1 pc",
+          "Stock_Available": 95,
+          "Last_Updated": "2025-11-19",
+          "Store_ID": "BNS05"
+        },
+        {
+          "Item_ID": "BNS05_ITM002",
+          "Item_Name": "Chocolate Chip Cookies (Pack of 6)",
+          "Category": "Bakery",
+          "Sub_Category": "Cookies",
+          "Price": 150,
+          "Unit_Size": "6 pcs",
+          "Stock_Available": 40,
+          "Last_Updated": "2025-11-19",
+          "Store_ID": "BNS05"
+        },
+        {
+          "Item_ID": "BNS05_ITM003",
+          "Item_Name": "Mango Milkshake",
+          "Category": "Shakes",
+          "Sub_Category": "Fruit Shakes",
+          "Price": 230,
+          "Unit_Size": "Regular",
+          "Stock_Available": 70,
+          "Last_Updated": "2025-11-19",
+          "Store_ID": "BNS05"
+        },
+        {
+          "Item_ID": "BNS05_ITM004",
+          "Item_Name": "Vanilla Shake",
+          "Category": "Shakes",
+          "Sub_Category": "Milk Shakes",
+          "Price": 180,
+          "Unit_Size": "Regular",
+          "Stock_Available": 85,
+          "Last_Updated": "2025-11-19",
+          "Store_ID": "BNS05"
+        },
+        {
+          "Item_ID": "BNS05_ITM005",
+          "Item_Name": "Tandoori Paneer Pizza (8 inch)",
+          "Category": "Pizza",
+          "Sub_Category": "Veg Pizza",
+          "Price": 420,
+          "Unit_Size": "8 inch",
+          "Stock_Available": 30,
+          "Last_Updated": "2025-11-19",
+          "Store_ID": "BNS05"
+        },
+        {
+          "Item_ID": "BNS05_ITM006",
+          "Item_Name": "Chocolate Lava Cake",
+          "Category": "Desserts",
+          "Sub_Category": "Hot Desserts",
+          "Price": 160,
+          "Unit_Size": "1 pc",
+          "Stock_Available": 48,
+          "Last_Updated": "2025-11-19",
+          "Store_ID": "BNS05"
+        }
+      ]
+    }
+  ],
+  "cakes_n_koffee": [
+    {
+      "Store_ID": "CNK01",
+      "Address": "52-A, Banjari, Near TVS Showroom, Colony Road, Kolar Road, Bhopal – 462042",
+      "Items": [
+        {
+          "Item_ID": "CNK01_ITM001",
+          "Item_Name": "Black Forest Cake (500g)",
+          "Category": "Cakes",
+          "Sub_Category": "Chocolate",
+          "Price": 340,
+          "Unit_Size": "500g",
+          "Stock_Available": 25,
+          "Last_Updated": "2025-11-19",
+          "Store_ID": "CNK01"
+        },
+        {
+          "Item_ID": "CNK01_ITM002",
+          "Item_Name": "Pineapple Cake (500g)",
+          "Category": "Cakes",
+          "Sub_Category": "Fruit Flavour",
+          "Price": 320,
+          "Unit_Size": "500g",
+          "Stock_Available": 20,
+          "Last_Updated": "2025-11-19",
+          "Store_ID": "CNK01"
+        },
+        {
+          "Item_ID": "CNK01_ITM003",
+          "Item_Name": "Mexican Feast Pizza (6 inch)",
+          "Category": "Pizza",
+          "Sub_Category": "Veg Pizza",
+          "Price": 195,
+          "Unit_Size": "6 inch",
+          "Stock_Available": 30,
+          "Last_Updated": "2025-11-19",
+          "Store_ID": "CNK01"
+        },
+        {
+          "Item_ID": "CNK01_ITM004",
+          "Item_Name": "Veg Cheese Sandwich",
+          "Category": "Sandwiches",
+          "Sub_Category": "Veg",
+          "Price": 60,
+          "Unit_Size": "1 pc",
+          "Stock_Available": 50,
+          "Last_Updated": "2025-11-19",
+          "Store_ID": "CNK01"
+        },
+        {
+          "Item_ID": "CNK01_ITM005",
+          "Item_Name": "Brownie with Hot Chocolate",
+          "Category": "Desserts",
+          "Sub_Category": "Brownies",
+          "Price": 120,
+          "Unit_Size": "1 serve",
+          "Stock_Available": 40,
+          "Last_Updated": "2025-11-19",
+          "Store_ID": "CNK01"
+        },
+        {
+          "Item_ID": "CNK01_ITM006",
+          "Item_Name": "Cold Coffee (Classic)",
+          "Category": "Beverages",
+          "Sub_Category": "Cold Drinks",
+          "Price": 110,
+          "Unit_Size": "Regular",
+          "Stock_Available": 70,
+          "Last_Updated": "2025-11-19",
+          "Store_ID": "CNK01"
+        }
+      ]
+    },
+    {
+      "Store_ID": "CNK02",
+      "Address": "Shop 4-5, J-335, Kotra Sultanabad, Near Neha Namkeen, Kamla Nagar, Bhopal – 462003",
+      "Items": [
+        {
+          "Item_ID": "CNK02_ITM001",
+          "Item_Name": "Red Velvet Cake (500g)",
+          "Category": "Cakes",
+          "Sub_Category": "Premium",
+          "Price": 450,
+          "Unit_Size": "500g",
+          "Stock_Available": 15,
+          "Last_Updated": "2025-11-19",
+          "Store_ID": "CNK02"
+        },
+        {
+          "Item_ID": "CNK02_ITM002",
+          "Item_Name": "Butterscotch Cake (500g)",
+          "Category": "Cakes",
+          "Sub_Category": "Flavoured",
+          "Price": 340,
+          "Unit_Size": "500g",
+          "Stock_Available": 18,
+          "Last_Updated": "2025-11-19",
+          "Store_ID": "CNK02"
+        },
+        {
+          "Item_ID": "CNK02_ITM003",
+          "Item_Name": "Garlic Bread Plate",
+          "Category": "Bakery",
+          "Sub_Category": "Bread Snacks",
+          "Price": 85,
+          "Unit_Size": "Plate",
+          "Stock_Available": 35,
+          "Last_Updated": "2025-11-19",
+          "Store_ID": "CNK02"
+        },
+        {
+          "Item_ID": "CNK02_ITM004",
+          "Item_Name": "Paneer Tikka Sandwich",
+          "Category": "Sandwiches",
+          "Sub_Category": "Grilled",
+          "Price": 90,
+          "Unit_Size": "1 pc",
+          "Stock_Available": 30,
+          "Last_Updated": "2025-11-19",
+          "Store_ID": "CNK02"
+        },
+        {
+          "Item_ID": "CNK02_ITM005",
+          "Item_Name": "Choco Lava Cake – Single Serve",
+          "Category": "Desserts",
+          "Sub_Category": "Hot Desserts",
+          "Price": 130,
+          "Unit_Size": "1 pc",
+          "Stock_Available": 25,
+          "Last_Updated": "2025-11-19",
+          "Store_ID": "CNK02"
+        },
+        {
+          "Item_ID": "CNK02_ITM006",
+          "Item_Name": "Cold Coffee with Ice Cream",
+          "Category": "Beverages",
+          "Sub_Category": "Special Drinks",
+          "Price": 150,
+          "Unit_Size": "Regular",
+          "Stock_Available": 40,
+          "Last_Updated": "2025-11-19",
+          "Store_ID": "CNK02"
+        }
+      ]
+    },
+    {
+      "Store_ID": "CNK03",
+      "Address": "Plot 1, KK Nagar, Kolar Road, Near Vishal Mega Mart, Bhopal – 462042",
+      "Items": [
+        {
+          "Item_ID": "CNK03_ITM001",
+          "Item_Name": "White Forest Cake (500g)",
+          "Category": "Cakes",
+          "Sub_Category": "Flavoured",
+          "Price": 360,
+          "Unit_Size": "500g",
+          "Stock_Available": 20,
+          "Last_Updated": "2025-11-19",
+          "Store_ID": "CNK03"
+        },
+        {
+          "Item_ID": "CNK03_ITM002",
+          "Item_Name": "Rum Cake (500g)",
+          "Category": "Cakes",
+          "Sub_Category": "Classic",
+          "Price": 320,
+          "Unit_Size": "500g",
+          "Stock_Available": 25,
+          "Last_Updated": "2025-11-19",
+          "Store_ID": "CNK03"
+        },
+        {
+          "Item_ID": "CNK03_ITM003",
+          "Item_Name": "Veg Club Sandwich",
+          "Category": "Sandwiches",
+          "Sub_Category": "Club",
+          "Price": 95,
+          "Unit_Size": "1 pc",
+          "Stock_Available": 45,
+          "Last_Updated": "2025-11-19",
+          "Store_ID": "CNK03"
+        },
+        {
+          "Item_ID": "CNK03_ITM004",
+          "Item_Name": "Chocolate Pastry",
+          "Category": "Bakery",
+          "Sub_Category": "Pastries",
+          "Price": 65,
+          "Unit_Size": "1 pc",
+          "Stock_Available": 70,
+          "Last_Updated": "2025-11-19",
+          "Store_ID": "CNK03"
+        },
+        {
+          "Item_ID": "CNK03_ITM005",
+          "Item_Name": "Oreo Shake",
+          "Category": "Shakes",
+          "Sub_Category": "Special Shakes",
+          "Price": 150,
+          "Unit_Size": "Regular",
+          "Stock_Available": 60,
+          "Last_Updated": "2025-11-19",
+          "Store_ID": "CNK03"
+        },
+        {
+          "Item_ID": "CNK03_ITM006",
+          "Item_Name": "Hot Chocolate",
+          "Category": "Beverages",
+          "Sub_Category": "Hot Drinks",
+          "Price": 120,
+          "Unit_Size": "Cup",
+          "Stock_Available": 40,
+          "Last_Updated": "2025-11-19",
+          "Store_ID": "CNK03"
+        }
+      ]
+    },
+    {
+      "Store_ID": "CNK04",
+      "Address": "Shop 4-5, J-335, Kotra Sultanabad, Kamla Nagar, Bhopal – 462003",
+      "Items": [
+        {
+          "Item_ID": "CNK04_ITM001",
+          "Item_Name": "Strawberry Cake (500g)",
+          "Category": "Cakes",
+          "Sub_Category": "Fruit Flavour",
+          "Price": 400,
+          "Unit_Size": "500g",
+          "Stock_Available": 15,
+          "Last_Updated": "2025-11-19",
+          "Store_ID": "CNK04"
+        },
+        {
+          "Item_ID": "CNK04_ITM002",
+          "Item_Name": "Chocolate Truffle Cake (500g)",
+          "Category": "Cakes",
+          "Sub_Category": "Premium",
+          "Price": 380,
+          "Unit_Size": "500g",
+          "Stock_Available": 12,
+          "Last_Updated": "2025-11-19",
+          "Store_ID": "CNK04"
+        },
+        {
+          "Item_ID": "CNK04_ITM003",
+          "Item_Name": "Margherita Pizza (8 inch)",
+          "Category": "Pizza",
+          "Sub_Category": "Veg Pizza",
+          "Price": 260,
+          "Unit_Size": "8 inch",
+          "Stock_Available": 28,
+          "Last_Updated": "2025-11-19",
+          "Store_ID": "CNK04"
+        },
+        {
+          "Item_ID": "CNK04_ITM004",
+          "Item_Name": "Veg Puff",
+          "Category": "Bakery",
+          "Sub_Category": "Snacks",
+          "Price": 35,
+          "Unit_Size": "1 pc",
+          "Stock_Available": 140,
+          "Last_Updated": "2025-11-19",
+          "Store_ID": "CNK04"
+        },
+        {
+          "Item_ID": "CNK04_ITM005",
+          "Item_Name": "Cold Coffee (with Ice Cream)",
+          "Category": "Beverages",
+          "Sub_Category": "Cold Drinks",
+          "Price": 140,
+          "Unit_Size": "Regular",
+          "Stock_Available": 50,
+          "Last_Updated": "2025-11-19",
+          "Store_ID": "CNK04"
+        },
+        {
+          "Item_ID": "CNK04_ITM006",
+          "Item_Name": "Cookie Jar (12 pcs)",
+          "Category": "Bakery",
+          "Sub_Category": "Cookies",
+          "Price": 200,
+          "Unit_Size": "12 pcs",
+          "Stock_Available": 30,
+          "Last_Updated": "2025-11-19",
+          "Store_ID": "CNK04"
+        }
+      ]
+    },
+    {
+      "Store_ID": "CNK05",
+      "Address": "Near Gulmohar Colony, Kolar Road, Bhopal – 462042",
+      "Items": [
+        {
+          "Item_ID": "CNK05_ITM001",
+          "Item_Name": "Vanilla Cake (500g)",
+          "Category": "Cakes",
+          "Sub_Category": "Basic",
+          "Price": 300,
+          "Unit_Size": "500g",
+          "Stock_Available": 18,
+          "Last_Updated": "2025-11-19",
+          "Store_ID": "CNK05"
+        },
+        {
+          "Item_ID": "CNK05_ITM002",
+          "Item_Name": "Chocolate Chip Cookies (6 pcs)",
+          "Category": "Bakery",
+          "Sub_Category": "Cookies",
+          "Price": 150,
+          "Unit_Size": "6 pcs",
+          "Stock_Available": 45,
+          "Last_Updated": "2025-11-19",
+          "Store_ID": "CNK05"
+        },
+        {
+          "Item_ID": "CNK05_ITM003",
+          "Item_Name": "Veg Cheese Sandwich",
+          "Category": "Sandwiches",
+          "Sub_Category": "Veg",
+          "Price": 70,
+          "Unit_Size": "1 pc",
+          "Stock_Available": 60,
+          "Last_Updated": "2025-11-19",
+          "Store_ID": "CNK05"
+        },
+        {
+          "Item_ID": "CNK05_ITM004",
+          "Item_Name": "Classic Pizza (10 inch)",
+          "Category": "Pizza",
+          "Sub_Category": "Veg Pizza",
+          "Price": 320,
+          "Unit_Size": "10 inch",
+          "Stock_Available": 22,
+          "Last_Updated": "2025-11-19",
+          "Store_ID": "CNK05"
+        },
+        {
+          "Item_ID": "CNK05_ITM005",
+          "Item_Name": "Hot Chocolate Muffin",
+          "Category": "Bakery",
+          "Sub_Category": "Muffins",
+          "Price": 95,
+          "Unit_Size": "1 pc",
+          "Stock_Available": 80,
+          "Last_Updated": "2025-11-19",
+          "Store_ID": "CNK05"
+        },
+        {
+          "Item_ID": "CNK05_ITM006",
+          "Item_Name": "Iced Latte",
+          "Category": "Beverages",
+          "Sub_Category": "Cold Coffee",
+          "Price": 120,
+          "Unit_Size": "Regular",
+          "Stock_Available": 55,
+          "Last_Updated": "2025-11-19",
+          "Store_ID": "CNK05"
+        }
+      ]
+    }
+  ],
+  "amul": [
+    {
+      "Store_ID": "AML01",
+      "Address": "Shop No. 7, Gufa Mandir Road, Opp Avantika Bunglow, Lalghati, Bhopal – 462030",
+      "Items": [
+        {
+          "Item_ID": "AML01_ITM001",
+          "Item_Name": "Amul Taaza Milk",
+          "Category": "Dairy",
+          "Sub_Category": "Milk",
+          "Price": 28,
+          "Unit_Size": "500ml",
+          "Stock_Available": 180,
+          "Last_Updated": "2025-11-19",
+          "Store_ID": "AML01"
+        },
+        {
+          "Item_ID": "AML01_ITM002",
+          "Item_Name": "Amul Butter",
+          "Category": "Dairy",
+          "Sub_Category": "Butter",
+          "Price": 58,
+          "Unit_Size": "100g",
+          "Stock_Available": 90,
+          "Last_Updated": "2025-11-19",
+          "Store_ID": "AML01"
+        },
+        {
+          "Item_ID": "AML01_ITM003",
+          "Item_Name": "Amul Vanilla Ice Cream",
+          "Category": "Ice Cream",
+          "Sub_Category": "Cup",
+          "Price": 25,
+          "Unit_Size": "100ml",
+          "Stock_Available": 150,
+          "Last_Updated": "2025-11-19",
+          "Store_ID": "AML01"
+        },
+        {
+          "Item_ID": "AML01_ITM004",
+          "Item_Name": "Amul Cheese Slices",
+          "Category": "Dairy",
+          "Sub_Category": "Cheese",
+          "Price": 145,
+          "Unit_Size": "200g",
+          "Stock_Available": 70,
+          "Last_Updated": "2025-11-19",
+          "Store_ID": "AML01"
+        },
+        {
+          "Item_ID": "AML01_ITM005",
+          "Item_Name": "Amul Kool Kesar",
+          "Category": "Beverages",
+          "Sub_Category": "Flavoured Milk",
+          "Price": 25,
+          "Unit_Size": "200ml",
+          "Stock_Available": 120,
+          "Last_Updated": "2025-11-19",
+          "Store_ID": "AML01"
+        },
+        {
+          "Item_ID": "AML01_ITM006",
+          "Item_Name": "Amul Masti Dahi",
+          "Category": "Dairy",
+          "Sub_Category": "Curd",
+          "Price": 40,
+          "Unit_Size": "400g",
+          "Stock_Available": 95,
+          "Last_Updated": "2025-11-19",
+          "Store_ID": "AML01"
+        }
+      ]
+    },
+    {
+      "Store_ID": "AML02",
+      "Address": "13, Mahalaxmi Parisar, Rajabhoj Arcade, Bagsewania, Hoshangabad Road, Bhopal – 462026",
+      "Items": [
+        {
+          "Item_ID": "AML02_ITM001",
+          "Item_Name": "Amul Gold Milk",
+          "Category": "Dairy",
+          "Sub_Category": "Milk",
+          "Price": 33,
+          "Unit_Size": "500ml",
+          "Stock_Available": 170,
+          "Last_Updated": "2025-11-19",
+          "Store_ID": "AML02"
+        },
+        {
+          "Item_ID": "AML02_ITM002",
+          "Item_Name": "Amul Mithai Mate",
+          "Category": "Dairy",
+          "Sub_Category": "Condensed Milk",
+          "Price": 62,
+          "Unit_Size": "200g",
+          "Stock_Available": 60,
+          "Last_Updated": "2025-11-19",
+          "Store_ID": "AML02"
+        },
+        {
+          "Item_ID": "AML02_ITM003",
+          "Item_Name": "Amul Ice Cream – Chocolate",
+          "Category": "Ice Cream",
+          "Sub_Category": "Cup",
+          "Price": 30,
+          "Unit_Size": "100ml",
+          "Stock_Available": 130,
+          "Last_Updated": "2025-11-19",
+          "Store_ID": "AML02"
+        },
+        {
+          "Item_ID": "AML02_ITM004",
+          "Item_Name": "Amul Paneer",
+          "Category": "Dairy",
+          "Sub_Category": "Paneer",
+          "Price": 85,
+          "Unit_Size": "200g",
+          "Stock_Available": 65,
+          "Last_Updated": "2025-11-19",
+          "Store_ID": "AML02"
+        },
+        {
+          "Item_ID": "AML02_ITM005",
+          "Item_Name": "Amul Kool Café",
+          "Category": "Beverages",
+          "Sub_Category": "Cold Coffee",
+          "Price": 25,
+          "Unit_Size": "200ml",
+          "Stock_Available": 100,
+          "Last_Updated": "2025-11-19",
+          "Store_ID": "AML02"
+        },
+        {
+          "Item_ID": "AML02_ITM006",
+          "Item_Name": "Amul Lassi",
+          "Category": "Beverages",
+          "Sub_Category": "Lassi",
+          "Price": 15,
+          "Unit_Size": "200ml",
+          "Stock_Available": 150,
+          "Last_Updated": "2025-11-19",
+          "Store_ID": "AML02"
+        }
+      ]
+    },
+    {
+      "Store_ID": "AML03",
+      "Address": "TT Nagar Main Market, Near Rang Mahal Cinema, Bhopal – 462003",
+      "Items": [
+        {
+          "Item_ID": "AML03_ITM001",
+          "Item_Name": "Amul Cow Milk",
+          "Category": "Dairy",
+          "Sub_Category": "Milk",
+          "Price": 28,
+          "Unit_Size": "500ml",
+          "Stock_Available": 160,
+          "Last_Updated": "2025-11-19",
+          "Store_ID": "AML03"
+        },
+        {
+          "Item_ID": "AML03_ITM002",
+          "Item_Name": "Amul Ghee",
+          "Category": "Dairy",
+          "Sub_Category": "Ghee",
+          "Price": 175,
+          "Unit_Size": "200ml",
+          "Stock_Available": 48,
+          "Last_Updated": "2025-11-19",
+          "Store_ID": "AML03"
+        },
+        {
+          "Item_ID": "AML03_ITM003",
+          "Item_Name": "Amul Butterscotch Ice Cream",
+          "Category": "Ice Cream",
+          "Sub_Category": "Cup",
+          "Price": 30,
+          "Unit_Size": "100ml",
+          "Stock_Available": 145,
+          "Last_Updated": "2025-11-19",
+          "Store_ID": "AML03"
+        },
+        {
+          "Item_ID": "AML03_ITM004",
+          "Item_Name": "Amul Pro Milk Powder",
+          "Category": "Dairy",
+          "Sub_Category": "Milk Powder",
+          "Price": 450,
+          "Unit_Size": "500g",
+          "Stock_Available": 20,
+          "Last_Updated": "2025-11-19",
+          "Store_ID": "AML03"
+        },
+        {
+          "Item_ID": "AML03_ITM005",
+          "Item_Name": "Amul Kool Rose",
+          "Category": "Beverages",
+          "Sub_Category": "Flavoured Milk",
+          "Price": 25,
+          "Unit_Size": "200ml",
+          "Stock_Available": 100,
+          "Last_Updated": "2025-11-19",
+          "Store_ID": "AML03"
+        },
+        {
+          "Item_ID": "AML03_ITM006",
+          "Item_Name": "Amul Masti Curd Cup",
+          "Category": "Dairy",
+          "Sub_Category": "Curd",
+          "Price": 20,
+          "Unit_Size": "200g",
+          "Stock_Available": 125,
+          "Last_Updated": "2025-11-19",
+          "Store_ID": "AML03"
+        }
+      ]
+    },
+    {
+      "Store_ID": "AML04",
+      "Address": "Bittan Market, Bhopal – 462042",
+      "Items": [
+        {
+          "Item_ID": "AML04_ITM001",
+          "Item_Name": "Amul Fresh Cream",
+          "Category": "Dairy",
+          "Sub_Category": "Cream",
+          "Price": 60,
+          "Unit_Size": "250ml",
+          "Stock_Available": 50,
+          "Last_Updated": "2025-11-19",
+          "Store_ID": "AML04"
+        },
+        {
+          "Item_ID": "AML04_ITM002",
+          "Item_Name": "Amul Butter (500g)",
+          "Category": "Dairy",
+          "Sub_Category": "Butter",
+          "Price": 260,
+          "Unit_Size": "500g",
+          "Stock_Available": 30,
+          "Last_Updated": "2025-11-19",
+          "Store_ID": "AML04"
+        },
+        {
+          "Item_ID": "AML04_ITM003",
+          "Item_Name": "Amul Ice Cream – Strawberry",
+          "Category": "Ice Cream",
+          "Sub_Category": "Cup",
+          "Price": 30,
+          "Unit_Size": "100ml",
+          "Stock_Available": 125,
+          "Last_Updated": "2025-11-19",
+          "Store_ID": "AML04"
+        },
+        {
+          "Item_ID": "AML04_ITM004",
+          "Item_Name": "Amul Cheese Block",
+          "Category": "Dairy",
+          "Sub_Category": "Cheese",
+          "Price": 240,
+          "Unit_Size": "400g",
+          "Stock_Available": 22,
+          "Last_Updated": "2025-11-19",
+          "Store_ID": "AML04"
+        },
+        {
+          "Item_ID": "AML04_ITM005",
+          "Item_Name": "Amul Kool Chocolate",
+          "Category": "Beverages",
+          "Sub_Category": "Flavoured Milk",
+          "Price": 30,
+          "Unit_Size": "200ml",
+          "Stock_Available": 85,
+          "Last_Updated": "2025-11-19",
+          "Store_ID": "AML04"
+        },
+        {
+          "Item_ID": "AML04_ITM006",
+          "Item_Name": "Amul Lassi (Sweet)",
+          "Category": "Beverages",
+          "Sub_Category": "Lassi",
+          "Price": 15,
+          "Unit_Size": "200ml",
+          "Stock_Available": 160,
+          "Last_Updated": "2025-11-19",
+          "Store_ID": "AML04"
+        }
+      ]
+    },
+    {
+      "Store_ID": "AML05",
+      "Address": "Kohefiza Main Road, Bhopal – 462001",
+      "Items": [
+        {
+          "Item_ID": "AML05_ITM001",
+          "Item_Name": "Amul Full Cream Milk",
+          "Category": "Dairy",
+          "Sub_Category": "Milk",
+          "Price": 33,
+          "Unit_Size": "500ml",
+          "Stock_Available": 150,
+          "Last_Updated": "2025-11-19",
+          "Store_ID": "AML05"
+        },
+        {
+          "Item_ID": "AML05_ITM002",
+          "Item_Name": "Amul Dark Chocolate",
+          "Category": "Bakery",
+          "Sub_Category": "Chocolate",
+          "Price": 125,
+          "Unit_Size": "150g",
+          "Stock_Available": 40,
+          "Last_Updated": "2025-11-19",
+          "Store_ID": "AML05"
+        },
+        {
+          "Item_ID": "AML05_ITM003",
+          "Item_Name": "Amul Ice Cream – Rajbhog",
+          "Category": "Ice Cream",
+          "Sub_Category": "Indian Flavours",
+          "Price": 65,
+          "Unit_Size": "125ml Cup",
+          "Stock_Available": 95,
+          "Last_Updated": "2025-11-19",
+          "Store_ID": "AML05"
+        },
+        {
+          "Item_ID": "AML05_ITM004",
+          "Item_Name": "Amul Mozzarella Cheese",
+          "Category": "Dairy",
+          "Sub_Category": "Cheese",
+          "Price": 130,
+          "Unit_Size": "200g",
+          "Stock_Available": 55,
+          "Last_Updated": "2025-11-19",
+          "Store_ID": "AML05"
+        },
+        {
+          "Item_ID": "AML05_ITM005",
+          "Item_Name": "Amul Kool Elaichi",
+          "Category": "Beverages",
+          "Sub_Category": "Flavoured Milk",
+          "Price": 25,
+          "Unit_Size": "200ml",
+          "Stock_Available": 100,
+          "Last_Updated": "2025-11-19",
+          "Store_ID": "AML05"
+        },
+        {
+          "Item_ID": "AML05_ITM006",
+          "Item_Name": "Amul Yogurt Cup",
+          "Category": "Dairy",
+          "Sub_Category": "Yogurt",
+          "Price": 25,
+          "Unit_Size": "100g",
+          "Stock_Available": 70,
+          "Last_Updated": "2025-11-19",
+          "Store_ID": "AML05"
+        }
+      ]
+    }
+  ],
+  "milan_sweets": [
+    {
+      "Store_ID": "MLN01",
+      "Address": "189, Service Road, Zone-I, MP Nagar, Bhopal – 462011",
+      "Items": [
+        {
+          "Item_ID": "MLN01_ITM001",
+          "Item_Name": "Milk Cake Premium (500g)",
+          "Category": "Mithai",
+          "Sub_Category": "Milk Sweets",
+          "Price": 360,
+          "Unit_Size": "500g Box",
+          "Stock_Available": 30,
+          "Last_Updated": "2025-11-19",
+          "Store_ID": "MLN01"
+        },
+        {
+          "Item_ID": "MLN01_ITM002",
+          "Item_Name": "Doda Burfi (500g)",
+          "Category": "Mithai",
+          "Sub_Category": "Premium Sweets",
+          "Price": 420,
+          "Unit_Size": "500g Box",
+          "Stock_Available": 25,
+          "Last_Updated": "2025-11-19",
+          "Store_ID": "MLN01"
+        },
+        {
+          "Item_ID": "MLN01_ITM003",
+          "Item_Name": "Kaju Roll (400g)",
+          "Category": "Mithai",
+          "Sub_Category": "Dry Sweets",
+          "Price": 550,
+          "Unit_Size": "400g Box",
+          "Stock_Available": 18,
+          "Last_Updated": "2025-11-19",
+          "Store_ID": "MLN01"
+        },
+        {
+          "Item_ID": "MLN01_ITM004",
+          "Item_Name": "Jalebi Premium (1kg)",
+          "Category": "Desserts",
+          "Sub_Category": "Indian Hot Sweets",
+          "Price": 260,
+          "Unit_Size": "1kg",
+          "Stock_Available": 40,
+          "Last_Updated": "2025-11-19",
+          "Store_ID": "MLN01"
+        },
+        {
+          "Item_ID": "MLN01_ITM005",
+          "Item_Name": "Navratan Mixture (1kg)",
+          "Category": "Namkeen",
+          "Sub_Category": "Mixtures",
+          "Price": 180,
+          "Unit_Size": "1kg Packet",
+          "Stock_Available": 70,
+          "Last_Updated": "2025-11-19",
+          "Store_ID": "MLN01"
+        },
+        {
+          "Item_ID": "MLN01_ITM006",
+          "Item_Name": "Rabdi Large Cup",
+          "Category": "Desserts",
+          "Sub_Category": "Milk Based",
+          "Price": 95,
+          "Unit_Size": "Cup",
+          "Stock_Available": 50,
+          "Last_Updated": "2025-11-19",
+          "Store_ID": "MLN01"
+        }
+      ]
+    },
+    {
+      "Store_ID": "MLN02",
+      "Address": "4, Chitragupt Colony, Banjari Colony, Kolar Road, Bhopal – 462042",
+      "Items": [
+        {
+          "Item_ID": "MLN02_ITM001",
+          "Item_Name": "Malpua Special (Plate)",
+          "Category": "Desserts",
+          "Sub_Category": "Hot Sweets",
+          "Price": 65,
+          "Unit_Size": "Plate",
+          "Stock_Available": 60,
+          "Last_Updated": "2025-11-19",
+          "Store_ID": "MLN02"
+        },
+        {
+          "Item_ID": "MLN02_ITM002",
+          "Item_Name": "Motichoor Laddu (250g)",
+          "Category": "Mithai",
+          "Sub_Category": "Classic Sweets",
+          "Price": 340,
+          "Unit_Size": "250g Box",
+          "Stock_Available": 22,
+          "Last_Updated": "2025-11-19",
+          "Store_ID": "MLN02"
+        },
+        {
+          "Item_ID": "MLN02_ITM003",
+          "Item_Name": "Bhujia Sev (1kg)",
+          "Category": "Namkeen",
+          "Sub_Category": "Bhujia",
+          "Price": 95,
+          "Unit_Size": "1kg Packet",
+          "Stock_Available": 80,
+          "Last_Updated": "2025-11-19",
+          "Store_ID": "MLN02"
+        },
+        {
+          "Item_ID": "MLN02_ITM004",
+          "Item_Name": "Gulab Jamun (12 pcs)",
+          "Category": "Desserts",
+          "Sub_Category": "Classic Sweets",
+          "Price": 220,
+          "Unit_Size": "12 pcs Box",
+          "Stock_Available": 35,
+          "Last_Updated": "2025-11-19",
+          "Store_ID": "MLN02"
+        },
+        {
+          "Item_ID": "MLN02_ITM005",
+          "Item_Name": "Kesar Peda (500g)",
+          "Category": "Mithai",
+          "Sub_Category": "Premium Sweets",
+          "Price": 480,
+          "Unit_Size": "500g Box",
+          "Stock_Available": 18,
+          "Last_Updated": "2025-11-19",
+          "Store_ID": "MLN02"
+        },
+        {
+          "Item_ID": "MLN02_ITM006",
+          "Item_Name": "Veg Samosa (6 pcs)",
+          "Category": "Snacks",
+          "Sub_Category": "Fresh Snacks",
+          "Price": 40,
+          "Unit_Size": "6 pcs",
+          "Stock_Available": 90,
+          "Last_Updated": "2025-11-19",
+          "Store_ID": "MLN02"
+        }
+      ]
+    }
+  ]
+}
