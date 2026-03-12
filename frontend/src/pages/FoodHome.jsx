@@ -1,5 +1,5 @@
-import { useState, useEffect, useRef } from 'react'
-import { useNavigate } from 'react-router-dom'
+import { useState, useEffect, useRef, useMemo } from 'react'
+import { useNavigate, useSearchParams } from 'react-router-dom'
 import api from '../api/axios'
 import useStoreStore from '../stores/storeStore'
 import Toast from '../components/Toast'
@@ -8,9 +8,25 @@ import StoreMap from '../components/StoreMap'
 const FoodHome = () => {
   const navigate = useNavigate()
   const { setSelectedStore } = useStoreStore()
+  const [searchParams, setSearchParams] = useSearchParams()
   const [brands, setBrands] = useState([])
   const [selectedBrand, setSelectedBrand] = useState(null)
   const [stores, setStores] = useState([])
+  const [allStores, setAllStores] = useState([])
+  const [cravingsData, setCravingsData] = useState([])
+  const [quickPicksData, setQuickPicksData] = useState([])
+  const [trendingStores, setTrendingStores] = useState([])
+  const [searchQuery, setSearchQuery] = useState('')
+  const [selectedCategory, setSelectedCategory] = useState('All')
+
+  // Mock categories for stores based on Brand for discovery features
+  const mockStoreCategories = {
+    'Manohar Dairy': 'Sweets',
+    'Bake N Shake': 'Bakery',
+    'Cakes N Koffee': 'Desserts',
+    'Amul': 'Dairy',
+    'Milan Sweets': 'Sweets'
+  }
   const [sortedStores, setSortedStores] = useState([])
   const [loading, setLoading] = useState(true)
   const [toast, setToast] = useState(null)
@@ -56,20 +72,19 @@ const FoodHome = () => {
     'Manohar Dairy': 'https://media-cdn.tripadvisor.com/media/photo-s/0a/b5/d0/b4/manohar-dairy-restaurant.jpg',
     'Bake N Shake': 'https://www.architectmagazine.com/wp-content/uploads/sites/5/2021/c6493ebb4f27476f9da41b778075d88d.jpg?w=500',
     'Cakes N Koffee': 'https://images.unsplash.com/photo-1578985545062-69928b1d9587?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80',
-    'Amul': 'https://cdn.hisurat.com/business/amul-parlour-7/Amul%20Parlour_AF1QipMWkNsQanU2GYnw-tIcNL_NYQji-NxfEUzFghOO.jpeg.webp',
+    'Amul': '/images/amul-store.jpg',
     'Milan Sweets': 'https://images.jdmagicbox.com/v2/comp/bhopal/c7/0755px755.x755.170928052731.r2c7/catalogue/milan-sweets-kolar-road-bhopal-sweet-shops-X9JJU28W2A.jpg'
   }
 
   useEffect(() => {
     loadBrands()
+    loadAllStores()
+    loadHomeData()
   }, [])
 
   useEffect(() => {
     if (selectedBrand) {
       loadStores(selectedBrand.id)
-
-    } else {
-      setStores([])
     }
   }, [selectedBrand])
 
@@ -84,6 +99,48 @@ const FoodHome = () => {
       setBrands([]) // Set empty array to prevent infinite loading
     } finally {
       setLoading(false)
+    }
+  }
+
+  const loadAllStores = async () => {
+    try {
+      const { data } = await api.get('/api/all-stores')
+      // Map mock categories, ratings, and images
+      const enhancedStores = (data || []).map(store => ({
+        ...store,
+        category: mockStoreCategories[store.Brand] || 'Meals',
+        rating: (4.0 + Math.random() * 1.0).toFixed(1), // Mock rating between 4.0 and 5.0
+        image: brandImages[store.Brand] || brandImages['Manohar Dairy']
+      }))
+      setAllStores(enhancedStores)
+    } catch (error) {
+      console.error('Error loading all stores:', error)
+    }
+  }
+
+  const loadHomeData = async () => {
+    try {
+      const [
+        { data: cravings },
+        { data: picks },
+        { data: trending }
+      ] = await Promise.all([
+        api.get('/api/home/cravings'),
+        api.get('/api/home/quick-picks'),
+        api.get('/api/home/trending')
+      ])
+      setCravingsData(cravings || [])
+      setQuickPicksData(picks || [])
+      
+      const enhancedTrending = (trending || []).map(store => ({
+        ...store,
+        category: mockStoreCategories[store.Brand] || 'Meals',
+        rating: (4.0 + Math.random() * 1.0).toFixed(1),
+        image: brandImages[store.Brand] || brandImages['Manohar Dairy']
+      }))
+      setTrendingStores(enhancedTrending)
+    } catch (error) {
+      console.error('Error loading home data:', error)
     }
   }
 
@@ -220,6 +277,11 @@ const FoodHome = () => {
     }
   }
 
+  // Data now fetched from backend via loadHomeData
+
+  // Read URL query parameter for dish filtering
+  const selectedDish = searchParams.get("dish")
+
   if (loading) {
     return (
       <div className="min-h-screen bg-gradient-to-br from-gray-900 via-black to-gray-900 flex items-center justify-center">
@@ -232,7 +294,7 @@ const FoodHome = () => {
   // Show stores view if a brand is selected
   if (selectedBrand) {
     return (
-      <div className="min-h-screen relative overflow-hidden bg-black">
+      <div className="h-screen relative overflow-hidden flex flex-col bg-black">
         {/* Background Image with Overlay */}
         <div 
           className="absolute inset-0"
@@ -689,106 +751,368 @@ const FoodHome = () => {
     )
   }
 
-  // Show brands view (initial state) - Vertical Accordion (Expandable Strips)
+  // Compute derived state for discovery layout
+  const categories = ['All', 'Sweets', 'Bakery', 'Fast Food', 'Dairy', 'Snacks', 'Desserts', 'Meals']
+  
+
+
+  // Trending stores fetched from backend
+  
+  // Featured brands: Top 6 brands
+  const featuredBrands = brands.slice(0, 6)
+
+  // --- Dynamic Discovery Data Generation --- //
+  
+  // Update Filter logic: Filter by store category, search text, AND by selected dish component
+  const getFilteredStores = () => {
+    if (!allStores) return []
+    return allStores.filter(store => {
+      if (!store) return false
+      
+      const storeName = store.Name || ''
+      const storeCategory = store.category || ''
+      const search = searchQuery || ''
+      
+      // Basic Search/Category Filter
+      const matchesSearch = storeName.toLowerCase().includes(search.toLowerCase()) || 
+                            storeCategory.toLowerCase().includes(search.toLowerCase());
+      const matchesCategory = selectedCategory === 'All' || storeCategory === selectedCategory;
+      
+      // Dish query param filter
+      let matchesDish = true
+      if (selectedDish && selectedCategory === 'All' && !searchQuery) {
+        const craving = cravingsData?.find(c => c.name.toLowerCase() === selectedDish.toLowerCase())
+        matchesDish = craving ? craving.stores.includes(store.Store_ID) : false
+      }
+      
+      return matchesSearch && matchesCategory && matchesDish;
+    })
+  }
+
+  // --- Static Promotion Data --- //
+  const specialsData = [
+    { id: 1, title: '20% OFF ON CAKES', store: 'Cakes N Koffee', gradient: 'from-pink-500 to-rose-500' },
+    { id: 2, title: 'Buy 1 Get 1 Coffee', store: 'Bake N Shake', gradient: 'from-amber-500 to-orange-600' },
+    { id: 3, title: 'Flat ₹50 Off Above ₹300', store: 'Manohar Dairy', gradient: 'from-blue-500 to-indigo-600' },
+  ]
+
+  const testimonialsData = [
+    { id: 1, rating: 5, text: "The pastries from Cakes N Koffee are incredible!", author: "Rahul Sharma" },
+    { id: 2, rating: 5, text: "Best Masala Dosa in town. Highly recommended!", author: "Priya Patel", store: "Manohar Dairy" },
+    { id: 3, rating: 4, text: "Always fresh and delivered on time.", author: "Amit Verma" },
+  ]
+
+  // Show discovery layout (initial state)
   return (
-    <div className="min-h-screen relative overflow-hidden bg-gradient-to-br from-gray-900 via-black to-gray-900">
-      {/* Content Container - No dark overlays blocking content */}
-      <div className="min-h-screen flex flex-col items-center justify-center px-2 md:px-4 py-8 md:py-12 relative z-10">
-        {/* Header */}
-        <div className="text-center mb-8 md:mb-12 animate-fade-in-up relative z-10">
-          <h1 className="text-4xl md:text-6xl font-bold mb-3 md:mb-4 bg-gradient-to-r from-pink-500 via-purple-500 to-pink-500 bg-clip-text text-transparent animate-gradient">
-            Culinary Destinations
-          </h1>
-          <p className="text-white/90 text-sm md:text-lg max-w-2xl mx-auto px-4">
-            Discover our curated selection of distinguished brands
-          </p>
+    <div className="min-h-screen bg-black text-white pb-20">
+      {/* 1. Smart Hero + Search */}
+      <div className="pt-12 pb-8 px-4 flex flex-col items-center justify-center bg-gradient-to-b from-gray-900 to-black relative overflow-hidden">
+        <div className="absolute inset-0 bg-[radial-gradient(circle_at_50%_0%,rgba(236,72,153,0.1),transparent_70%)]" />
+        <h1 className="text-4xl md:text-5xl font-bold mb-6 bg-gradient-to-r from-pink-500 via-purple-500 to-pink-500 bg-clip-text text-transparent text-center relative z-10">
+          Find Your Next Meal
+        </h1>
+        
+        <div className="w-full max-w-2xl relative z-10 mb-8">
+          <div className="relative">
+            <input 
+              type="text" 
+              placeholder="Search restaurants, sweets, snacks..." 
+              value={searchQuery}
+              onChange={(e) => setSearchQuery(e.target.value)}
+              className="w-full bg-gray-900/80 border border-gray-700 rounded-2xl py-4 pl-12 pr-4 text-white placeholder-gray-400 focus:outline-none focus:border-pink-500 focus:ring-1 focus:ring-pink-500 transition-all shadow-xl"
+            />
+            <svg className="w-6 h-6 text-gray-400 absolute left-4 top-1/2 transform -translate-y-1/2" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+              <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M21 21l-6-6m2-5a7 7 0 11-14 0 7 7 0 0114 0z" />
+            </svg>
+          </div>
         </div>
 
-        {/* Vertical Accordion Container */}
-        {brands.length > 0 ? (
-          <div className="accordion-container w-full max-w-7xl h-[60vh] md:h-[70vh] flex gap-1 md:gap-2 lg:gap-4 relative z-10">
-            {brands.map((brand, index) => {
-            const bgImage = brandImages[brand.name] || 'https://images.unsplash.com/photo-1556912172-45b7abe8b7e1?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80'
-            const gradient = brandGradients[brand.name] || 'from-gray-600 via-gray-500 to-gray-600'
-            const isHovered = hoveredBrand === brand.id
-            
-            return (
-              <div
-                key={brand.id}
-                onMouseEnter={() => setHoveredBrand(brand.id)}
-                onMouseLeave={() => setHoveredBrand(null)}
-                onClick={() => handleBrandSelect(brand)}
-                className="accordion-item group relative cursor-pointer overflow-hidden rounded-2xl border border-gray-800/50 group-hover:border-pink-500/50 min-w-[60px] transition-all duration-700 ease-out"
-                style={{ 
-                  flex: isHovered ? '3 1 0%' : '1 1 0%'
-                }}
+        <div className="flex flex-wrap justify-center gap-3 relative z-10 max-w-3xl">
+          <span className="text-gray-400 text-sm w-full text-center hidden md:block mb-1">Popular Categories</span>
+          {categories.slice(1, 6).map(cat => (
+            <button 
+              key={cat}
+              onClick={() => { 
+                setSelectedCategory(cat); 
+                setSearchParams({}); // Clear query when clicking a category
+                document.getElementById('grid-section')?.scrollIntoView({ behavior: 'smooth' }) 
+              }}
+              className={`px-5 py-2.5 rounded-full text-sm font-medium transition-all hover:scale-105 ${
+                selectedCategory === cat 
+                  ? 'bg-pink-500 text-white shadow-lg shadow-pink-500/30 border border-pink-400'
+                  : 'bg-gray-800/60 hover:bg-gray-700/80 border border-gray-700/50 text-white hover:border-pink-500/30'
+              }`}
+            >
+              {cat}
+            </button>
+          ))}
+          {/* Active Dish Filter Pill */}
+          {selectedDish && (
+            <div className="flex items-center gap-2 px-4 py-2 bg-pink-500/20 border border-pink-500/50 text-pink-300 rounded-full animate-fade-in-up mt-4 max-w-sm mx-auto">
+              <span>Showing stores with: <strong className="text-white">{selectedDish}</strong></span>
+              <button 
+                onClick={() => { setSearchParams({}) }}
+                className="hover:text-white bg-pink-500/30 rounded-full w-5 h-5 flex items-center justify-center transition-colors"
+                title="Clear filter"
               >
-                {/* Background Image */}
-                <img 
-                  src={bgImage}
-                  alt={brand.name}
-                  className="absolute inset-0 w-full h-full object-cover transition-transform duration-700 group-hover:scale-110"
-                  style={{ filter: 'brightness(1.15)' }}
-                  onError={(e) => {
-                    e.target.style.display = 'none'
-                  }}
-                />
-                
-                {/* Dark Overlay for Text Readability - Lighter */}
-                <div className="absolute inset-0 bg-gradient-to-t from-black/50 via-black/40 to-black/30" />
-                
-                {/* Content Container */}
-                <div className="relative h-full flex flex-col items-center justify-center p-4 md:p-6">
-                  {/* Brand Name - Horizontal when collapsed */}
-                  <div className="flex items-center justify-center h-32 md:h-40 overflow-hidden">
-                    <div className="flex flex-col items-center gap-1.5">
-                      {brand.name.split(' ').map((word, wordIndex) => (
-                        <h2 
-                          key={wordIndex}
-                          className={`text-xl md:text-2xl lg:text-3xl font-bold text-white transition-all duration-700 whitespace-nowrap`}
-                          style={{
-                            letterSpacing: '0.05em',
-                            textShadow: '2px 2px 4px rgba(0,0,0,0.9), -2px -2px 4px rgba(0,0,0,0.9), 2px -2px 4px rgba(0,0,0,0.9), -2px 2px 4px rgba(0,0,0,0.9), 0 0 8px rgba(0,0,0,0.8)',
-                            WebkitTextStroke: '2px #000000',
-                            WebkitTextStrokeWidth: '2px',
-                            paintOrder: 'stroke fill'
-                          }}
-                        >
-                          {word}
-                        </h2>
-                      ))}
+                ✕
+              </button>
+            </div>
+          )}
+        </div>
+      </div>
+
+      <div className="max-w-7xl mx-auto px-4 space-y-16 py-8">
+        {/* Render filtered store grid if search or category or dish query is active */}
+        {(searchQuery || selectedCategory !== 'All' || selectedDish) && (
+          <section id="grid-section">
+            <div className="flex items-center justify-between mb-8">
+              <h2 className="text-3xl font-bold bg-clip-text text-transparent bg-gradient-to-r from-pink-500 to-purple-500">
+                {selectedDish ? `Stores selling ${selectedDish}` : `Explore ${selectedCategory !== 'All' ? selectedCategory : 'All Stores'}`}
+              </h2>
+              <span className="text-gray-400">{getFilteredStores().length} results</span>
+            </div>
+            
+            {getFilteredStores().length > 0 ? (
+              <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-6">
+                {getFilteredStores().map(store => (
+                  <div 
+                    key={store.Store_ID}
+                    onClick={() => handleStoreSelect(store)}
+                    className="group bg-gray-900 border border-gray-800 rounded-2xl overflow-hidden hover:border-pink-500/50 transition-all duration-300 hover:shadow-xl hover:shadow-pink-500/10 hover:-translate-y-1 cursor-pointer"
+                  >
+                    <div className="aspect-[4/3] relative overflow-hidden">
+                      <img 
+                        src={store.image} 
+                        alt={store.Name} 
+                        className="w-full h-full object-cover group-hover:scale-110 transition-transform duration-700"
+                        loading="lazy"
+                      />
+                      <div className="absolute inset-0 bg-gradient-to-t from-black/80 via-black/20 to-transparent"></div>
+                      <div className="absolute top-3 right-3 bg-black/50 backdrop-blur-md px-2 py-1 rounded-xl flex items-center gap-1 border border-white/10">
+                        <span className="text-yellow-400 text-sm">⭐</span>
+                        <span className="text-white font-medium text-sm">{store.rating}</span>
+                      </div>
+                    </div>
+                    <div className="p-5">
+                      <h3 className="font-bold text-xl mb-1 text-white group-hover:text-pink-400 transition-colors">{store.Name}</h3>
+                      <p className="text-gray-400 text-sm mb-4 line-clamp-1">{store.address || 'Bhopal, MP'}</p>
+                      
+                      <div className="flex items-center justify-between pt-4 border-t border-gray-800">
+                        <span className="px-3 py-1 bg-gray-800 text-gray-300 text-xs font-medium rounded-full">
+                          {store.category}
+                        </span>
+                        <div className="flex items-center gap-1 text-pink-500 text-sm font-medium">
+                          <span>View Menu</span>
+                          <svg className="w-4 h-4 group-hover:translate-x-1 transition-transform" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                            <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M9 5l7 7-7 7" />
+                          </svg>
+                        </div>
+                      </div>
                     </div>
                   </div>
-                  
-                  {/* Expanded Details - Only visible on hover */}
-                  <div className={`absolute bottom-8 left-0 right-0 px-4 transition-all duration-700 delay-150 pointer-events-none ${
-                    isHovered ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-4'
-                  }`}>
-                    <div className="text-center">
-                      <p className="text-white/80 text-sm md:text-base mb-3">
-                        Explore our collection
-                      </p>
-                      <span className="text-pink-400 text-sm font-semibold flex items-center justify-center gap-2">
-                        Click to view stores
-                        <span className="transform group-hover:translate-x-1 transition-transform">→</span>
-                      </span>
+                ))}
+              </div>
+            ) : (
+              <div className="text-center py-20 bg-gray-900/50 rounded-3xl border border-gray-800">
+                <div className="text-6xl mb-4">🍽️</div>
+                <h3 className="text-2xl font-bold mb-2">No stores found</h3>
+                <p className="text-gray-400">Try adjusting your filters or search terms.</p>
+                <button 
+                  onClick={() => {
+                    setSearchQuery('')
+                    setSelectedCategory('All')
+                    setSearchParams({})
+                  }}
+                  className="mt-6 px-6 py-2 bg-gradient-to-r from-pink-500 to-purple-500 text-white rounded-xl font-medium hover:opacity-90 transition-opacity"
+                >
+                  Clear All Filters
+                </button>
+              </div>
+            )}
+          </section>
+        )}
+
+        {/* 2. Featured Brands */}
+        {!searchQuery && selectedCategory === 'All' && !selectedDish && featuredBrands.length > 0 && (
+          <section>
+            <div className="flex items-center justify-between mb-6">
+              <h2 className="text-2xl font-bold">Featured Brands</h2>
+            </div>
+            <div className="flex overflow-x-auto pb-6 gap-6 custom-scrollbar snap-x">
+              {featuredBrands.map((brand) => (
+                <div 
+                  key={brand.id}
+                  onClick={() => handleBrandSelect(brand)}
+                  className="flex-none w-72 h-48 rounded-2xl overflow-hidden relative group cursor-pointer border border-gray-800 hover:border-pink-500/50 transition-all duration-300 snap-start shadow-xl"
+                >
+                  <img src={brandImages[brand.name] || brandImages['Manohar Dairy']} alt={brand.name} className="absolute inset-0 w-full h-full object-cover transition-transform duration-700 group-hover:scale-110" />
+                  <div className="absolute inset-0 bg-gradient-to-t from-black/90 via-black/40 to-transparent" />
+                  <div className="absolute bottom-0 left-0 p-5 w-full">
+                    <h3 className="text-xl font-bold text-white mb-1">{brand.name}</h3>
+                    <p className="text-sm text-pink-400 opacity-0 group-hover:opacity-100 transition-opacity duration-300">View Stores →</p>
+                  </div>
+                </div>
+              ))}
+            </div>
+          </section>
+        )}
+
+        {/* 3. Trending Near You */}
+        {!searchQuery && selectedCategory === 'All' && !selectedDish && trendingStores.length > 0 && (
+          <section>
+            <div className="flex items-center gap-2 mb-6">
+              <h2 className="text-2xl font-bold">🔥 Trending Near You</h2>
+            </div>
+            <div className="flex overflow-x-auto pb-6 gap-6 custom-scrollbar snap-x">
+              {trendingStores.map(store => (
+                <div 
+                  key={store.Store_ID}
+                  onClick={() => handleStoreSelect(store)}
+                  className="flex-none w-80 rounded-2xl bg-gray-900 border border-gray-800 overflow-hidden cursor-pointer hover:scale-105 hover:border-pink-500/50 hover:shadow-xl hover:shadow-pink-500/10 transition-all duration-300 snap-start"
+                >
+                  <div className="h-40 relative">
+                    <img src={store.image} alt={store.Name} className="w-full h-full object-cover" />
+                    <div className="absolute top-3 right-3 bg-white/10 backdrop-blur-md px-2 py-1 rounded-lg border border-white/20 flex items-center gap-1">
+                      <span className="text-yellow-400 text-sm">⭐</span>
+                      <span className="text-white font-medium text-sm">{store.rating}</span>
+                    </div>
+                  </div>
+                  <div className="p-4">
+                    <h3 className="font-bold text-lg mb-1 truncate">{store.Name}</h3>
+                    <div className="text-gray-400 text-sm mb-3">{store.Brand} • {store.category}</div>
+                    <div className="flex items-center gap-4 text-sm text-gray-300">
+                      <span className="flex items-center gap-1"><svg className="w-4 h-4 text-pink-500" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M17.657 16.657L13.414 20.9a1.998 1.998 0 01-2.827 0l-4.244-4.243a8 8 0 1111.314 0z" /></svg> {(Math.random() * 5 + 1).toFixed(1)} km</span>
+                      <span className="text-green-400">• Open Now</span>
                     </div>
                   </div>
                 </div>
-                
-                {/* Glow Effect on Hover */}
-                <div className={`absolute inset-0 bg-gradient-to-r ${gradient} opacity-0 group-hover:opacity-20 blur-2xl transition-opacity duration-700 -z-10`} />
-              </div>
-            )
-          })}
-          </div>
-        ) : (
-          <div className="text-center py-12 text-white/90 relative z-10">
-            <div className="text-6xl mb-4">🍽️</div>
-            <p className="text-xl mb-2">No brands available</p>
-            <p className="text-sm text-white/70">Please check if the backend server is running</p>
-          </div>
+              ))}
+            </div>
+          </section>
         )}
+
+        {/* 5. What Are You Craving? */}
+        {!searchQuery && selectedCategory === 'All' && !selectedDish && cravingsData.length > 0 && (
+          <section>
+            <div className="flex items-center gap-2 mb-6">
+              <h2 className="text-2xl font-bold">🔥 What Are You Craving?</h2>
+            </div>
+            <div className="flex overflow-x-auto pb-6 gap-6 custom-scrollbar snap-x">
+              {cravingsData.map(craving => (
+                <div 
+                  key={craving.id}
+                  className="flex-none w-40 group cursor-pointer hover:scale-105 transition-all duration-300 snap-start"
+                  onClick={() => setSearchParams({ dish: craving.name })}
+                >
+                  <div className="w-40 h-40 rounded-full overflow-hidden mb-4 border-4 border-gray-800 group-hover:border-pink-500/50 shadow-lg relative bg-gray-800">
+                    <img src={craving.image} loading="lazy" alt={craving.name} className="w-full h-full object-cover transition-transform duration-500 group-hover:scale-110" />
+                    <div className="absolute inset-0 bg-black/20 group-hover:bg-transparent transition-colors duration-300" />
+                  </div>
+                  <div className="text-center">
+                    <h3 className="font-bold text-lg text-white mb-1 truncate">{craving.name}</h3>
+                    <p className="text-xs text-gray-400">Available at {craving.storesCount} stores</p>
+                  </div>
+                </div>
+              ))}
+            </div>
+          </section>
+        )}
+
+        {/* 6. Quick Picks */}
+        {!searchQuery && selectedCategory === 'All' && !selectedDish && quickPicksData.length > 0 && (
+          <section>
+            <div className="flex items-center gap-2 mb-6">
+              <h2 className="text-2xl font-bold">⚡ Quick Picks</h2>
+            </div>
+            <div className="flex overflow-x-auto pb-6 gap-6 custom-scrollbar snap-x">
+              {quickPicksData.map(item => (
+                <div 
+                  key={item.id}
+                  onClick={() => {
+                    // Find the store inside allStores using storeId
+                    const matchingStore = allStores.find(s => s.Store_ID === item.storeId)
+                    if (matchingStore) {
+                      handleStoreSelect(matchingStore)
+                    }
+                  }}
+                  className="flex-none w-64 rounded-2xl bg-gray-900 border border-gray-800 overflow-hidden cursor-pointer hover:border-pink-500/50 hover:shadow-xl hover:shadow-pink-500/10 transition-all duration-300 snap-start flex flex-col"
+                >
+                  <div className="h-32 relative bg-gray-800">
+                    <img src={item.image} loading="lazy" alt={item.name} className="w-full h-full object-cover" />
+                    <div className="absolute bottom-2 right-2 bg-black/70 backdrop-blur-md px-2 py-1 rounded text-white font-bold text-sm">
+                      {item.price}
+                    </div>
+                  </div>
+                  <div className="p-4 flex-1 flex flex-col justify-center">
+                    <h3 className="font-bold text-lg mb-1 truncate">{item.name}</h3>
+                    <p className="text-sm text-gray-400 truncate">from {item.storeName}</p>
+                  </div>
+                </div>
+              ))}
+            </div>
+          </section>
+        )}
+
+        {/* 7. Today's Specials */}
+        {!searchQuery && selectedCategory === 'All' && !selectedDish && (
+          <section>
+            <div className="flex items-center gap-2 mb-6">
+              <h2 className="text-2xl font-bold">🎉 Today&apos;s Specials</h2>
+            </div>
+            <div className="flex overflow-x-auto pb-6 gap-6 custom-scrollbar snap-x">
+              {specialsData.map(special => (
+                <div 
+                  key={special.id}
+                  className={`flex-none w-80 md:w-96 rounded-2xl bg-gradient-to-br ${special.gradient} p-6 relative overflow-hidden cursor-pointer transition-all duration-300 hover:scale-[1.02] hover:shadow-2xl hover:shadow-pink-500/20 snap-start flex flex-col justify-between h-48`}
+                >
+                  <div className="absolute top-0 right-0 w-32 h-32 bg-white/10 rounded-full blur-2xl -mr-10 -mt-10" />
+                  <div className="absolute bottom-0 left-0 w-24 h-24 bg-black/20 rounded-full blur-xl -ml-8 -mb-8" />
+                  
+                  <div className="relative z-10 flex flex-col h-full">
+                    <span className="text-white/80 font-medium text-sm uppercase tracking-wider mb-2">{special.store}</span>
+                    <h3 className="text-2xl font-extrabold text-white leading-tight mb-4 flex-1">{special.title}</h3>
+                    <button className="bg-white text-gray-900 font-bold py-2 px-4 rounded-lg w-fit text-sm hover:bg-gray-100 transition-colors shadow-lg">
+                      Order Now
+                    </button>
+                  </div>
+                </div>
+              ))}
+            </div>
+          </section>
+        )}
+
+        {/* 8. What Customers Are Saying */}
+        {!searchQuery && selectedCategory === 'All' && !selectedDish && (
+          <section>
+            <div className="flex items-center gap-2 mb-6">
+              <h2 className="text-2xl font-bold">💬 What Customers Are Saying</h2>
+            </div>
+            <div className="flex overflow-x-auto pb-6 gap-6 custom-scrollbar snap-x">
+              {testimonialsData.map(testimonial => (
+                <div 
+                  key={testimonial.id}
+                  className="flex-none w-80 rounded-2xl bg-gray-900/50 backdrop-blur-sm border border-gray-800 p-6 flex flex-col justify-between hover:border-pink-500/30 transition-all duration-300 snap-start"
+                >
+                  <div>
+                    <div className="flex gap-1 mb-4">
+                      {[...Array(testimonial.rating)].map((_, i) => (
+                        <span key={i} className="text-yellow-400 text-sm">⭐</span>
+                      ))}
+                    </div>
+                    <p className="text-gray-300 italic mb-6">"{testimonial.text}"</p>
+                  </div>
+                  <div>
+                    <h4 className="font-bold text-white text-sm">{testimonial.author}</h4>
+                    {testimonial.store && <p className="text-xs text-pink-400 mt-1">{testimonial.store}</p>}
+                  </div>
+                </div>
+              ))}
+            </div>
+          </section>
+        )}
+
+
       </div>
 
       {toast && (

@@ -55,7 +55,7 @@ const VerticalSelection = () => {
   ]
 
   return (
-    <div className="min-h-screen bg-near-black text-primary overflow-hidden relative">
+    <div className="min-h-screen bg-near-black text-primary overflow-x-hidden relative">
       {/* Background - Dark base */}
       <div className="absolute inset-0 bg-gradient-to-br from-near-black via-gray-900 to-near-black"></div>
       
@@ -106,20 +106,20 @@ const VerticalSelection = () => {
         <div className="absolute top-1/2 left-1/4 w-64 h-64 bg-dark-pink/10 rounded-full blur-3xl animate-pulse" style={{ animationDelay: '4s' }}></div>
       </div>
 
-      <div className="relative z-10 pt-12 pb-16 min-h-screen">
+      <div className="relative z-10 pt-8 pb-16 min-h-screen">
         <div className="container mx-auto px-4">
           {/* Header Section */}
-          <div className="text-center mb-16 animate-fade-in-up">
-            <h1 className="text-6xl md:text-7xl font-extrabold mb-6 bg-gradient-to-r from-white via-text-secondary to-dark-pink bg-clip-text text-transparent bg-[length:200%_100%] animate-gradient leading-tight">
+          <div className="text-center mb-6 animate-fade-in-up">
+            <h1 className="text-4xl md:text-5xl font-extrabold mb-4 bg-gradient-to-r from-white via-text-secondary to-dark-pink bg-clip-text text-transparent bg-[length:200%_100%] animate-gradient leading-normal pb-1">
               Embark on Your Journey
             </h1>
-            <p className="text-xl text-text-secondary max-w-3xl mx-auto leading-relaxed">
+            <p className="text-lg mt-2 text-text-secondary max-w-3xl mx-auto leading-relaxed">
               Immerse yourself in a curated collection of local excellence, where every vertical unveils a world of possibilities and unparalleled experiences
             </p>
           </div>
 
           {/* Vertical Cards Grid */}
-          <div className="grid md:grid-cols-3 gap-8 max-w-7xl mx-auto mt-20">
+          <div className="grid md:grid-cols-3 gap-8 max-w-7xl mx-auto mt-6">
             {verticals.map((vertical, index) => (
               <div
                 key={vertical.id}

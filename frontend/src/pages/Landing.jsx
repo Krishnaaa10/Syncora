@@ -241,7 +241,7 @@ const Landing = () => {
         </section>
 
         {/* Features Grid */}
-        <section className="container mx-auto px-4 py-20">
+        <section className="container mx-auto px-4 py-20 pb-10">
           <div className="max-w-7xl mx-auto">
             <div className="text-center mb-16">
               <h2 className="text-4xl md:text-5xl font-bold mb-4">Why Choose Syncora?</h2>
@@ -272,6 +272,82 @@ const Landing = () => {
                   <p className="text-text-secondary text-sm">{feature.desc}</p>
                 </div>
               ))}
+            </div>
+          </div>
+        </section>
+
+        {/* Seller Portal Announcement */}
+        <section className="container mx-auto px-4 py-20 bg-gradient-to-r from-transparent via-blue-900/10 to-transparent">
+          <div className="max-w-7xl mx-auto">
+            <div className="bg-gradient-to-br from-blue-900/30 to-gray-900/80 rounded-3xl p-12 lg:p-16 border border-blue-800/50 backdrop-blur-xl relative overflow-hidden shadow-2xl flex flex-col md:flex-row items-center gap-12">
+              <div className="absolute top-0 right-0 w-96 h-96 bg-blue-500/10 rounded-full blur-3xl"></div>
+              <div className="absolute bottom-0 left-0 w-64 h-64 bg-dark-pink/10 rounded-full blur-3xl"></div>
+              
+              <div className="flex-1 relative z-10">
+                <div className="inline-flex items-center gap-2 px-4 py-2 bg-blue-500/20 text-blue-400 rounded-full text-sm font-bold tracking-wider mb-6 border border-blue-500/30">
+                  <span className="w-2 h-2 rounded-full bg-blue-400 animate-pulse"></span>
+                  FOR BUSINESSES
+                </div>
+                <h2 className="text-4xl md:text-5xl font-bold mb-6 text-white leading-tight">
+                  Grow your business with the <span className="text-blue-400">Syncora Seller Portal</span>
+                </h2>
+                <p className="text-xl text-text-secondary leading-relaxed mb-8">
+                  Transform your physical store into a powerful digital catalog. Manage inventory in real-time, process incoming orders seamlessly, and connect directly with local customers.
+                </p>
+                
+                <ul className="space-y-4 mb-10">
+                  {['🛍️ Full product catalog control', '📊 Comprehensive sales dashboard', '⚡ Instant order notifications', '🎟️ Custom promotional tools'].map((item, i) => (
+                    <li key={i} className="flex items-center text-gray-300 font-medium text-lg">
+                      <span className="mr-3">{item}</span>
+                    </li>
+                  ))}
+                </ul>
+
+                <Link
+                  to="/register"
+                  className="inline-flex items-center gap-2 bg-blue-600 hover:bg-blue-500 text-white px-8 py-4 rounded-xl text-lg font-bold transition-all transform hover:scale-105 shadow-lg shadow-blue-500/25"
+                >
+                  Start Selling Today <span>→</span>
+                </Link>
+              </div>
+              
+              <div className="flex-1 w-full relative z-10 flex justify-center">
+                {/* Abstract UI Representation */}
+                <div className="w-full max-w-md bg-[#111] rounded-2xl border border-gray-700 overflow-hidden shadow-2xl transform rotate-2 hover:rotate-0 transition-transform duration-500">
+                  <div className="h-10 bg-gray-800 flex items-center px-4 gap-2">
+                    <div className="w-3 h-3 rounded-full bg-red-500"></div>
+                    <div className="w-3 h-3 rounded-full bg-yellow-500"></div>
+                    <div className="w-3 h-3 rounded-full bg-green-500"></div>
+                  </div>
+                  <div className="p-6">
+                    <div className="h-8 w-1/3 bg-blue-500/20 rounded mb-6"></div>
+                    <div className="grid grid-cols-2 gap-4 mb-6">
+                      <div className="h-24 bg-gray-800 rounded-lg p-4 flex flex-col justify-end">
+                        <div className="h-4 w-1/2 bg-gray-600 rounded mb-2"></div>
+                        <div className="h-6 w-3/4 bg-white/20 rounded"></div>
+                      </div>
+                      <div className="h-24 bg-gray-800 rounded-lg p-4 flex flex-col justify-end">
+                        <div className="h-4 w-1/2 bg-gray-600 rounded mb-2"></div>
+                        <div className="h-6 w-3/4 bg-white/20 rounded"></div>
+                      </div>
+                    </div>
+                    <div className="space-y-3">
+                      <div className="h-10 w-full bg-gray-800 rounded flex items-center px-4 justify-between">
+                        <div className="h-4 w-1/4 bg-gray-600 rounded"></div>
+                        <div className="h-6 w-16 bg-green-500/20 rounded"></div>
+                      </div>
+                      <div className="h-10 w-full bg-gray-800 rounded flex items-center px-4 justify-between">
+                        <div className="h-4 w-1/3 bg-gray-600 rounded"></div>
+                        <div className="h-6 w-16 bg-yellow-500/20 rounded"></div>
+                      </div>
+                      <div className="h-10 w-full bg-gray-800 rounded flex items-center px-4 justify-between">
+                        <div className="h-4 w-1/5 bg-gray-600 rounded"></div>
+                        <div className="h-6 w-16 bg-blue-500/20 rounded"></div>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </div>
             </div>
           </div>
         </section>
