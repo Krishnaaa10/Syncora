@@ -35,8 +35,6 @@ const Checkout = () => {
 
       const orderItems = items.map(item => ({
         id: item.id,
-        name: item.name,
-        price: item.price,
         quantity: item.quantity,
       }))
 

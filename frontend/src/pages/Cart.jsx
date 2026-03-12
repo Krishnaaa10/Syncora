@@ -16,19 +16,27 @@ const Cart = () => {
   }, [items])
 
   const checkStock = async () => {
+    if (items.length === 0) {
+      setStockWarnings({})
+      return
+    }
+
     const warnings = {}
-    for (const item of items) {
-      try {
-        const { data: product } = await api.get(`/products/${item.id}`)
-        if (product.Stock_Available < item.quantity) {
+    try {
+      const ids = items.map(item => item.id)
+      const { data: stockData } = await api.post('/api/products/bulk-stock', { ids })
+      
+      for (const item of items) {
+        const productStockInfo = stockData.find(p => p.id === item.id)
+        if (productStockInfo && productStockInfo.stock < item.quantity) {
           warnings[item.id] = {
-            available: product.Stock_Available,
+            available: productStockInfo.stock,
             requested: item.quantity,
           }
         }
-      } catch (error) {
-        console.error('Failed to check stock for', item.id)
       }
+    } catch (error) {
+      console.error('Failed to perform bulk stock check', error)
     }
     setStockWarnings(warnings)
   }
@@ -61,8 +69,6 @@ const Cart = () => {
 
       const orderItems = items.map(item => ({
         id: item.id,
-        name: item.name,
-        price: item.price,
         quantity: item.quantity,
       }))
 
