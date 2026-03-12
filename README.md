@@ -1,190 +1,148 @@
-# Syncora - Consumer Website (Food Vertical)
+# 🚀 Syncora - Modern E-Commerce & Delivery Platform
 
-A consumer-facing React website for Syncora's Food vertical, built with React (Vite), Tailwind CSS, and a mock Express backend.
+![Syncora Banner](https://images.unsplash.com/photo-1555939594-58d7cb561ad1?auto=format&fit=crop&q=80&w=2000&h=600)
 
-## Project Structure
+**Syncora** is a comprehensive, full-stack e-commerce and fast-delivery platform. It features both a sleek **Consumer Application** for browsing and ordering, and a powerful, real-time **Seller Portal** for merchants to manage their incoming orders, inventory, and store settings. 
 
-```
+---
+
+## ✨ Key Features
+
+### 🍔 Consumer Application
+- **Modern UI/UX:** Responsive, mobile-first design built with React and Tailwind CSS.
+- **Smart Cart System:** Real-time stock validation, automated inventory checks, and bulk API optimizations to ensure item availability.
+- **Interactive Checkout flow:** Integrated with Google Maps for location selection, supporting both "Delivery" and "Pickup" with QR code generation for in-store pickups.
+- **Multi-Vertical Support:** Designed to scale across different verticals like Food, Furniture, and Restaurants.
+
+### 🏪 Seller Portal (Dashboard)
+- **Real-Time Order Management:** Powered by **Socket.IO**, sellers receive instant live notifications the moment a consumer places an order.
+- **Secure Authentication:** JWT-based robust authentication system protecting sensitive merchant data and store settings.
+- **Live Inventory Tracking:** Instantly reflect stock deductions across the platform when orders are placed.
+- **Analytics & Status Controls:** Update order statuses (Pending, Ready, Collected, Delivered) instantly.
+
+### ⚙️ Backend Architecture
+- **MongoDB Integration:** Persistent, scalable data storage using Mongoose schemas.
+- **Optimized Performance:** Solved N+1 query bottlenecks in cart validation via a centralized bulk stock-check endpoint.
+- **Websockets:** Bi-directional real-time communication between the Node.js server and React dashboards.
+
+---
+
+## 🛠️ Technology Stack
+
+### Frontend
+- **Framework:** React 18, Vite
+- **Styling:** Tailwind CSS, Framer Motion
+- **State Management:** Zustand
+- **Routing:** React Router v6
+- **Real-Time:** Socket.IO-Client
+- **Maps:** Google Maps API integration
+
+### Backend
+- **Runtime:** Node.js
+- **Framework:** Express.js
+- **Database:** MongoDB (Mongoose)
+- **Authentication:** JSON Web Tokens (JWT), bcrypt
+- **Real-Time:** Socket.IO
+- **Mailing:** Nodemailer (for Contact Form)
+
+---
+
+## 📂 Project Structure
+
+```text
 Syncora/
-├── backend/          # Express mock server
-│   ├── server.js    # Main server file
-│   ├── seed.json    # Seed data (exactly as specified)
-│   └── package.json
-└── frontend/        # React frontend
-    ├── src/
-    │   ├── pages/   # All page components
-    │   ├── components/
-    │   ├── stores/  # Zustand state management
-    │   └── api/     # Axios configuration
+├── backend/                  # Node.js/Express Backend
+│   ├── models/               # Mongoose schemas (User, Seller, Store, Product, Order)
+│   ├── server.js             # Main entry point & API routes
+│   ├── seed_mongo.js         # MongoDB seeding script
+│   └── package.json    
+└── frontend/                 # React/Vite Frontend
+    ├── src/             
+    │   ├── api/              # Axios instances & interceptors
+    │   ├── components/       # Reusable UI components & Layouts
+    │   ├── pages/            # Consumer & Seller pages
+    │   ├── stores/           # Zustand state configurations
+    │   └── App.jsx           # Master Routing
     └── package.json
 ```
 
-## Theme Colors
+---
 
-- **Background**: `#0b0b0b` (near black)
-- **Primary Accent/CTA**: `#c2185b` (darker pink)
-- **Text Primary**: `#ffffff` (white)
-- **Text Secondary**: `#bdbdbd` (light gray)
-
-## Setup Instructions
+## 🚀 Getting Started
 
 ### Prerequisites
+- **Node.js:** v16.0 or higher
+- **MongoDB:** A running local MongoDB instance or a MongoDB Atlas URI
+- **Git**
 
-- Node.js 16+ and npm
-- (Optional) Google Maps API key for map functionality
+### 1. Clone the Repository
+```bash
+git clone https://github.com/Krishnaaa10/Syncora.git
+cd Syncora
+```
 
-### Backend Setup
-
+### 2. Backend Setup
+Navigate to the backend directory, install dependencies, and setup environment variables.
 ```bash
 cd backend
 npm install
+```
+
+Create a `.env` file in the `backend/` directory:
+```env
+PORT=3001
+MONGO_URI=your_mongodb_connection_string
+# Optional for email services:
+GMAIL_USER=your_email@gmail.com
+GMAIL_APP_PASSWORD=your_app_password
+GOOGLE_CLIENT_ID=your_google_oauth_client_id
+```
+
+Start the backend development server:
+```bash
 npm run dev
 ```
 
-The mock server will run on `http://localhost:3001`
-
-### Frontend Setup
-
+### 3. Frontend Setup
+Open a new terminal, navigate to the frontend directory, and configure the environment.
 ```bash
 cd frontend
 npm install
-cp .env.example .env
-# Edit .env and add your Google Maps API key (optional)
+```
+
+Create a `.env` file in the `frontend/` directory:
+```env
+VITE_API_URL=http://localhost:3001
+VITE_GOOGLE_MAPS_KEY=your_google_maps_api_key  # Optional
+```
+
+Start the frontend development server:
+```bash
 npm run dev
 ```
 
-The frontend will run on `http://localhost:5173`
+---
 
-## Environment Variables
+## 📖 Usage Guide & Testing Flow
 
-Create `frontend/.env` with:
+1. **Seed the Database:** When the backend server first connects to an empty MongoDB database, it will automatically run the seed functionality.
+2. **Access the App:** Open `http://localhost:5173` in your browser.
+3. **Consumer Flow:**
+   - Log in using test credentials (or register a new user).
+   - Navigate to the Food section (`/food`).
+   - Add items to the cart, choose "Delivery" or "Pickup", and checkout.
+4. **Seller Flow:**
+   - Open a secondary browser tab or window.
+   - Go to `http://localhost:5173/login`, click **"Are you a seller?"**.
+   - Log in with the demo seller credentials:
+     - Email: `seller@syncora.com`
+     - Password: `seller123`
+   - View real-time orders pop up dynamically on the **Seller Dashboard**.
 
-```
-VITE_API_URL=http://localhost:3001
-VITE_GOOGLE_MAPS_KEY=your_google_maps_api_key_here
-```
+---
 
-If `VITE_GOOGLE_MAPS_KEY` is not provided, the app will use a static map placeholder.
+## 🤝 Contributing
+Contributions, issues, and feature requests are always welcome! Feel free to check the [issues page](https://github.com/Krishnaaa10/Syncora/issues) if you want to contribute.
 
-## Seed Data
-
-The app uses exactly the provided seed dataset:
-- **1 Store**: Manohar - Main Outlet (MNR01)
-- **6 Products**: Akhrot Bites, Badam Burfi, Besan Laddu, Kachori, Samosa, Namkeen Mix
-
-Seed data is loaded from `backend/seed.json`. To replace with full dataset later, update this file and restart the server.
-
-## Features
-
-### Pages Implemented
-
-1. **Landing (`/`)** - Project description, login modal, three vertical choice cards (Furniture, Restaurant, Food). Only Food works.
-
-2. **Food Home (`/food`)** - Brand selector, Google Map (left), store list (right). Single store marker pulses as "nearest".
-
-3. **Store Page (`/store/:storeId`)** - Product grid with filters by Category/Sub_Category, stock badges, add-to-cart.
-
-4. **Product Detail (`/product/:itemId`)** - Product details, quantity selector, stock info, add to cart.
-
-5. **Cart (`/cart`)** - Cart items with qty controls, stock validation, promo code input, two CTAs: Delivery and Pickup.
-
-6. **Checkout (`/checkout`)** - Delivery flow: collect address, mock payment, create order.
-
-7. **Order Status (`/orders/:orderId`)** - Order details, pickup QR code (for pickup orders), download QR button, status updates.
-
-8. **Profile (`/profile`)** - User info and past orders list.
-
-### Key Features
-
-- **Stock Validation**: Prevents adding more items than available stock
-- **Stock Warnings**: Shows warnings in cart if stock has changed
-- **Pickup QR**: Generates and allows download of QR code for pickup orders
-- **Responsive Design**: Mobile-first, map stacks above list on mobile
-- **Persistent State**: Selected store and cart persisted in localStorage
-- **Mock Authentication**: Accepts any credentials for demo purposes
-
-## Demo Flow: Creating a Pickup Order & Simulating Scan
-
-### Step 1: Login
-1. Navigate to `/` and click "Get Started"
-2. Use any email/password (e.g., `demo@syncora.com` / `password`)
-3. Click Login
-
-### Step 2: Browse Products
-1. Click on the Food card to go to `/food`
-2. Click "View Products" on the Manohar store
-3. Browse products and add items to cart
-
-### Step 3: Create Pickup Order
-1. Go to `/cart`
-2. Click "Order for Pickup"
-3. You'll be redirected to the order status page with a QR code
-
-### Step 4: Simulate QR Scan (Dev Tool)
-1. On the order status page, scroll to "Dev Tools (Simulate Scan)"
-2. Click "Mark as Ready" to change status from `pending` to `ready`
-3. Click "Mark as Collected" to change status to `collected`
-4. Order status updates automatically (polls every 5 seconds)
-
-### Step 5: Download QR Code
-1. Click "Download QR Code" button
-2. QR code will be saved as PNG file: `pickup-qr-{orderId}.png`
-
-## API Endpoints
-
-### Backend (Mock Server)
-
-- `POST /auth/login` - Mock login (accepts any credentials)
-- `GET /brands` - List all brands (returns Manohar only)
-- `GET /brands/:brandId/stores` - Get stores for a brand
-- `GET /stores/:storeId/products` - Get products for a store
-- `GET /products/:itemId` - Get product details
-- `POST /orders` - Create order (returns orderId and pickupToken if type=pickup)
-- `GET /orders/:orderId` - Get order details
-- `GET /orders?userId=xxx` - Get user orders
-- `POST /mock/orders/:orderId/simulate-scan` - Simulate QR scan (dev only, sets order to 'ready' or 'collected')
-
-## Testing Checklist
-
-- [x] App runs with `npm run dev` (frontend) and `npm run mock` (backend)
-- [x] Landing page shows three cards; Food navigates to `/food`
-- [x] On `/food`: Map left + store list right; MNR01 marker visible and pulsating
-- [x] Store page lists six seed items with correct Price and Stock_Available
-- [x] Add to cart enforces stock rules
-- [x] Cart shows correct totals
-- [x] Pickup flow returns QR and allows download
-- [x] Simulate scan transitions order status
-- [x] UI uses exact theme colors and is responsive
-
-## Technology Stack
-
-- **Frontend**: React 18, Vite, Tailwind CSS, React Router v6
-- **State Management**: Zustand
-- **HTTP Client**: Axios
-- **Maps**: Google Maps JS API (with static fallback)
-- **QR Code**: qrcode.react
-- **Backend**: Express.js (mock server)
-
-## Development Notes
-
-- All product IDs are mapped from `Item_ID` to internal `product.id`
-- Selected store is persisted in localStorage
-- Cart is persisted in localStorage
-- Stock validation happens on add-to-cart and quantity updates
-- Mock server uses in-memory storage (resets on restart)
-- TODO markers in code indicate where seller/inventory sync logic will be plugged later
-
-## Future Enhancements
-
-- Replace seed.json with full dataset
-- Integrate real backend API
-- Add seller/inventory sync logic
-- Real-time order status updates via Socket.IO
-- Image uploads for products
-- Real payment integration
-- Multi-store support with distance calculation
-
-## License
-
-This is a demo project for educational purposes.
-
+## 📄 License
+This project is for educational and portfolio purposes. 
