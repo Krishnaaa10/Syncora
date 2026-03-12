@@ -6,7 +6,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Syncora - Consumer Website</title>
   </head>
-  <body>
+  <body><script>window.onerror = function(msg, url, line, col, error) { document.body.innerHTML += '<div style=\'background:red;color:white;position:fixed;top:0;left:0;z-index:9999;padding:20px;width:100%;font-size:20px;\'>ERROR: ' + msg + ' - ' + (error ? error.stack : '') + '</div>'; }; window.addEventListener(\'error\', e => window.onerror(e.message, e.filename, e.lineno, e.colno, e.error));</script>
     <div id="root"></div>
     <script type="module" src="/src/main.jsx"></script>
   </body>
